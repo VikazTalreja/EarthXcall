@@ -15,7 +15,7 @@ const Home = () => {
             Based on groundbreaking science, One Earth developed a powerful
             Solutions Framework that provides a roadmap to stop climate change
             and protect biodiversity. The solutions are readily available,
-            science-based, and fall under three pillars of collective action.
+            science-based, and fall under three pillars of collective actions.
           </p>
           <button className="mt-6 px-6 py-3 w-56 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition">
             Explore Solutions
