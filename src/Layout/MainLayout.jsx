@@ -1,15 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/NavBar";
-
+import Footer from "../components/footer"
 
 function MainLayout() {
   return (
     <>
       <Navbar />
-      <main className="p-4">
+      <main>
         <Outlet /> 
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 }
