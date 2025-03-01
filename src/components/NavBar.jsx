@@ -7,11 +7,11 @@ const Navbar = () => {
   const [openSubMenu, setOpenSubMenu] = useState(null);
 
   return (
-    <header className="bg-white text-emerald-800">
+    <header className="bg-[#F1F0E9] text-[#0D4715]">
       <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Left Side - Logo */}
         <div className="flex items-center space-x-7">
-          <a href="#" className="text-2xl font-bold">CallXEarth</a>
+          <a href="/" className="text-2xl font-bold">CallXEarth</a>
 
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-6 z-10">
@@ -24,7 +24,7 @@ const Navbar = () => {
 
                 {/* Dropdown Menu */}
                 {item.subMenu && (
-                  <ul className="absolute left-0 mt-2 w-48 bg-white text-emerald-800 rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                  <ul className="absolute left-0 mt-2 w-48 bg-white text-[#0D4715] rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
                     {item.subMenu.map((subItem, subIndex) => (
                       <li key={subIndex} className="hover:bg-gray-300">
                         <a href={subItem.link} className="block px-4 py-2">{subItem.name}</a>
@@ -39,13 +39,13 @@ const Navbar = () => {
 
         {/* Donate Now Button */}
         <div className="flex flex-row space-x-4 ">
-        <a href="#" className="hidden md:block bg-emerald-900 text-sm text-white px-4 py-2 rounded-lg font-semibold hover:scale-105 transition">
+        <a href="#" className="hidden md:block bg-[#0D4715] text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-semibold hover:scale-105 transition">
           Donate
         </a>
-        <a href="#" className="hidden md:block bg-emerald-900 text-sm text-white px-4 py-2 rounded-lg font-semibold hover:scale-105 transition">
+        <a href="#" className="hidden md:block bg-[#0D4715] text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-semibold hover:scale-105 transition">
           CSR
         </a>
-        <a href="#" className="hidden md:block bg-emerald-900 text-sm  text-white px-4 py-2 rounded-lg font-semibold hover:scale-105 transition">
+        <a href="#" className="hidden md:block bg-[#0D4715] text-sm  text-[#F1F0E9] px-4 py-2 rounded-lg font-semibold hover:scale-105 transition">
           Donate Land
         </a>
         </div>

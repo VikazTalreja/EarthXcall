@@ -1,9 +1,9 @@
 export const menuItems = [
-  { name: "About", link: "#" },
+  { name: "About", link: "/about" },
   {
-    name: "Our Work",
+    name: "Get Involved",
     subMenu: [
-      { name: "Something1", link: "#" },
+      { name: "Philantrophy", link: "/get-involved/philantrophic-giving" },
       { name: "Something2", link: "#" },
       { name: "Something3", link: "#" },
     ],
