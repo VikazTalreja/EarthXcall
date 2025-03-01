@@ -241,3 +241,24 @@ export const EnergyTransition = [
     }
   ];
   
+
+export const cardData = [
+    {
+      id: "energy-transition",
+      title: "Energy Transition",
+      img: "https://source.unsplash.com/300x200/?solar,energy",
+      text: "Shifting from fossil fuels to 100% clean, renewable energy, ensuring a sustainable and just transition.",
+    },
+    {
+      id: "nature-conservation",
+      title: "Nature Conservation",
+      img: "https://source.unsplash.com/300x200/?forest,conservation",
+      text: "Protecting and restoring ecosystems to preserve biodiversity and combat climate change.",
+    },
+    {
+      id: "regenerative-agriculture",
+      title: "Regenerative Agriculture",
+      img: "https://source.unsplash.com/300x200/?farm,organic",
+      text: "Transforming food production by promoting sustainable farming practices and restoring soil health.",
+    },
+  ];
