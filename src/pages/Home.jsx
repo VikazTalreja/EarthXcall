@@ -64,6 +64,7 @@ const Home = () => {
   ];
 
   return (
+
     <>
       {/* Hero Section */}
       <section className="relative flex flex-col justify-center bg-[#E8F1F2] py-20 px-6 text-center md:text-left">
@@ -88,6 +89,7 @@ const Home = () => {
               className="w-full max-w-lg object-contain rounded-lg shadow-lg"
             />
           </div>
+
         </div>
       </section>
 
