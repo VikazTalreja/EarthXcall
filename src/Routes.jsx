@@ -5,6 +5,7 @@ import About from "./pages/Aboutus";
 import NotFound from "./pages/NotFound";
 import Home2 from "./pages/Home2";
 import PhilanthropicGiving from "./pages/Philantrophic";
+import Gifitng from "./pages/Gifitng";
 // import Home from "./pages/Home3";
 function AppRoutes() {
   return (
@@ -16,6 +17,7 @@ function AppRoutes() {
           <Route index element=<Home /> />
           <Route path="/get-involved/philantrophic-giving" element={<PhilanthropicGiving />}/>
           <Route path="/about" element={<About />} />
+          <Route path="/gifting" element={<Gifitng />}/>
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

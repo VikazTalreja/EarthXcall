@@ -19,5 +19,5 @@ export const menuItems = [
   { name: "Get Involved", link: "#" },
   { name: "Why Trees", link: "#" },
   { name: "News & Stories", link: "#" },
-  { name: "Gifting", link: "#" },
+  { name: "Gifting", link: "/gifting" },
 ];
