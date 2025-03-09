@@ -4,7 +4,7 @@ export const menuItems = [
     name: "Get Involved",
     subMenu: [
       { name: "Philantrophy", link: "/get-involved/philantrophic-giving" },
-      { name: "Something2", link: "#" },
+      { name: "Ambassadors", link: "/get-involved/ambassador" },
       { name: "Something3", link: "#" },
     ],
   },
