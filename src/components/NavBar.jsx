@@ -1,13 +1,37 @@
-import { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaChevronDown } from "react-icons/fa";
-import {menuItems} from "../data/NavBarData"
+import { menuItems } from "../data/NavBarData";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [openSubMenu, setOpenSubMenu] = useState(null);
+  const [isVisible, setIsVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      setIsVisible(false); 
+    } else {
+      setIsVisible(true); 
+    }
+
+    setLastScrollY(currentScrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   return (
-    <header className="bg-[#F1F0E9] text-[#0D4715]">
+    <header
+      className={`fixed top-0 left-0 w-full bg-white text-green-700 shadow-md z-50 transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Left Side - Logo */}
         <div className="flex items-center space-x-7">
@@ -37,17 +61,17 @@ const Navbar = () => {
           </ul>
         </div>
 
-        {/* Donate Now Button */}
-        <div className="flex flex-row space-x-4 ">
-        <a href="#" className="hidden md:block bg-[#0D4715] text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-semibold hover:scale-105 transition">
-          Donate
-        </a>
-        <a href="#" className="hidden md:block bg-[#0D4715] text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-semibold hover:scale-105 transition">
-          CSR
-        </a>
-        <a href="#" className="hidden md:block bg-[#0D4715] text-sm  text-[#F1F0E9] px-4 py-2 rounded-lg font-semibold hover:scale-105 transition">
-          Donate Land
-        </a>
+        {/* Donate Buttons */}
+        <div className="hidden md:flex space-x-4">
+          <a href="/donate" className="bg-green-700 text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-bold hover:scale-105 transition">
+            Donate
+          </a>
+          <a href="#" className="bg-green-700 text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-bold hover:scale-105 transition">
+            CSR
+          </a>
+          <a href="#" className="bg-green-700 text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-bold hover:scale-105 transition">
+            Donate Land
+          </a>
         </div>
 
         {/* Mobile Menu Icon */}
@@ -85,7 +109,6 @@ const Navbar = () => {
             <a href="#" className="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition">
               Donate Now
             </a>
-            
           </li>
         </ul>
       </div>

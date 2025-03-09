@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12">
+    <footer className="  py-12">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
         {/* Logo & Tax Info */}
         <div>
@@ -51,9 +51,9 @@ export default function Footer() {
 
           {/* Newsletter Signup */}
           <h3 className="font-semibold text-lg text-green-400 mt-5">Newsletter Signup</h3>
-          <input type="text" placeholder="Enter your first name..." className="w-full p-2 mt-2 bg-gray-800 text-white rounded focus:ring-2 focus:ring-green-400" />
-          <input type="email" placeholder="Enter your email..." className="w-full p-2 mt-2 bg-gray-800 text-white rounded focus:ring-2 focus:ring-green-400" />
-          <button className="w-full mt-2 p-2 bg-green-600 rounded hover:bg-green-700 transition">Sign Up</button>
+          <input type="text" placeholder="Enter your first name..." className="w-full p-2 mt-2 bg-gray-300  rounded focus:ring-2 focus:ring-green-400" />
+          <input type="email" placeholder="Enter your email..." className="w-full p-2 mt-2  bg-gray-300 rounded focus:ring-2 focus:ring-green-400" />
+          <button className="w-full text-white mt-2 p-2 bg-green-600 rounded hover:bg-green-700 transition">Sign Up</button>
         </div>
       </div>
 

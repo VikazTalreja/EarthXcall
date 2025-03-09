@@ -1,9 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
+import SubscribeForm from '../components/subscribe';
 const About = () => {
   return (
     <div className="bg-white text-gray-900 font-sans">
+      
       {/* Hero Section */}
       <header 
         className="relative h-screen bg-green-700 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-6" 
@@ -11,7 +12,7 @@ const About = () => {
           backgroundImage: `url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2070&auto=format&fit=crop')`,
           backgroundSize: 'cover'
         }}>
-        {/* <div className="absolute inset-0 bg-green-500 bg-opacity-50"></div> */}
+        <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="relative z-10 max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">About EarthXcall</h1>
           <p className="text-xl md:text-2xl mb-8">Dedicated to restoring our planet's forests and ecosystems, one tree at a time.</p>
@@ -22,6 +23,7 @@ const About = () => {
       </header>
 
       {/* Our Mission Section */}
+      <SubscribeForm />
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
@@ -82,38 +84,45 @@ const About = () => {
         </div>
       </section>
 
+      <section className="py-16 px-4 bg-gray-50 text-center">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-green-700 mb-6">Why Trees?</h2>
+          <p className="text-lg text-gray-700 mb-8">
+            In the face of complex global challenges, we focus on one impactful, science-based solution: trees. Reforestation helps restore healthy forests, support biodiversity, and combat climate change.
+          </p>
+          <a className="text-green-600 font-semibold hover:underline" href="#">
+            Learn more
+          </a>
+        </div>
+      </section>
+
       {/* Our Impact Section */}
-      <section className="py-16 px-4 bg-green-50">
-        <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-12 text-green-700">Our Impact</h2>
-          
+      <section className="py-16 px-4 bg-green-50 text-center">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-green-700 mb-8">Together, We're Creating Change</h2>
+          <h3 className="text-xl font-semibold text-gray-800 mb-4">Our Impact So Far</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
             <div className="p-6 bg-white rounded-lg shadow-lg">
-              <div className="text-4xl font-bold text-green-700 mb-4">10M+</div>
+              <p className="text-4xl font-bold text-green-700">10M+</p>
               <p className="text-lg text-gray-700">Trees Planted</p>
             </div>
-            
             <div className="p-6 bg-white rounded-lg shadow-lg">
-              <div className="text-4xl font-bold text-green-700 mb-4">25+</div>
+              <p className="text-4xl font-bold text-green-700">25+</p>
               <p className="text-lg text-gray-700">Countries</p>
             </div>
-            
             <div className="p-6 bg-white rounded-lg shadow-lg">
-              <div className="text-4xl font-bold text-green-700 mb-4">5K+</div>
+              <p className="text-4xl font-bold text-green-700">5K+</p>
               <p className="text-lg text-gray-700">Hectares Restored</p>
             </div>
-            
             <div className="p-6 bg-white rounded-lg shadow-lg">
-              <div className="text-4xl font-bold text-green-700 mb-4">100+</div>
+              <p className="text-4xl font-bold text-green-700">100+</p>
               <p className="text-lg text-gray-700">Community Partners</p>
             </div>
           </div>
-          
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-            Our work goes beyond just planting trees. We're creating jobs, restoring ecosystems, protecting biodiversity, and helping communities adapt to climate change.
-          </p>
         </div>
       </section>
+
+      
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-green-700 text-white text-center">

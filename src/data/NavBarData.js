@@ -1,23 +1,33 @@
 export const menuItems = [
-  { name: "About", link: "/about" },
+  {name:"Why We" , link:"#"},
+  { name: "About", link: "",
+    subMenu: [
+      { name: "Our Mission", link: "/about" },
+      { name: "Our Team", link: "#" },
+      { name: "Our Impact", link: "#" },
+    ]
+   },
   {
     name: "Get Involved",
     subMenu: [
       { name: "Philantrophy", link: "/get-involved/philantrophic-giving" },
-      { name: "Something2", link: "#" },
-      { name: "Something3", link: "#" },
+      { name: "Corporate Sustainability", link: "#" },
+      { name: "Ambassadors", link: "#" },
     ],
   },
-  {
-    name: "Technologies",
+  { name: "News & Stories", link: "#",
     subMenu: [
-      { name: "Something6", link: "#" },
-      { name: "Something5", link: "#" },
-      { name: "Something4", link: "#" },
+      { name: "Earth Stories", link: "#" },
+      { name: "NewsRoom", link: "#" },
     ],
-  },
+   },
   { name: "Why Trees", link: "/why-trees" },
-  { name: "News & Stories", link: "#" },
-  { name: "Gifting", link: "/gifting" },
+ 
+  { name: "Gifting", 
+    subMenu:[
+      {name : "Gift Trees" ,link: "/gifting"},
+      {name : "Our Shop" ,link: "/shop"}
+    ]
+   },
   { name: "Why We", link: "/why-we" },
 ];
