@@ -8,6 +8,7 @@ import PhilanthropicGiving from "./pages/Philantrophic";
 import Gifitng from "./pages/Gifitng";
 import WhyTrees from "./pages/WhyTrees";
 import DonatePage from "./pages/Donatepage";
+import AmbassadorsPage from "./pages/Ambassador";
 // import Home from "./pages/Home3";
 function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ function AppRoutes() {
           {/* <Route index element={<Home2 />} /> */}
           <Route index element={<Home />} />
           <Route path="/get-involved/philantrophic-giving" element={<PhilanthropicGiving />}/>
+          <Route path="/get-involved/ambassador" element={<AmbassadorsPage />}/>
           <Route path="/about" element={<About />} />
           <Route path="/gifting" element={<Gifitng />}/>
           <Route path="/why-trees" element={<WhyTrees />}/>

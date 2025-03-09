@@ -12,7 +12,7 @@ export const menuItems = [
     subMenu: [
       { name: "Philantrophy", link: "/get-involved/philantrophic-giving" },
       { name: "Corporate Sustainability", link: "#" },
-      { name: "Ambassadors", link: "#" },
+      { name: "Ambassadors", link: "/get-involved/ambassador" },
     ],
   },
   { name: "News & Stories", link: "#",
