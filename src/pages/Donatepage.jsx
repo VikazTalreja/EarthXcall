@@ -101,13 +101,17 @@ const DonatePage = () => {
             Your donation helps restore forests, create jobs, and fight climate
             change.
           </motion.p>
+        </div> 
+        <div className="my-10 hidden md:flex">
+           <DonationForm />
         </div>
+
       
       </section>
 
       <section className="py-16 px-4 bg-green-50 text-center">
-      <div className="my-10   flex">
-            <DonationForm />
+      <div className="my-10 md:hidden flex">
+      <DonationForm />
         </div>
         <h2 className="text-3xl font-bold text-green-700 mb-8">Our Impact</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-6xl mx-auto">

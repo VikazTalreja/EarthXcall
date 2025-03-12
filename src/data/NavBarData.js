@@ -1,5 +1,4 @@
 export const menuItems = [
-  {name:"Why We" , link:"#"},
   { name: "About", link: "",
     subMenu: [
       { name: "Our Mission", link: "/about" },
@@ -21,7 +20,7 @@ export const menuItems = [
       { name: "NewsRoom", link: "#" },
     ],
    },
-  { name: "Why Trees", link: "/why-trees" },
+  { name: "Why We", link: "/why-we" },
  
   { name: "Gifting", 
     subMenu:[

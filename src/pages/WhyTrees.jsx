@@ -11,9 +11,9 @@ const WhyTrees = () => {
           backgroundImage: `url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop')`,
           backgroundSize: 'cover'
         }}>
-        {/* <div className="absolute inset-0 bg-green-550 bg-opacity-50"></div> */}
+        <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="relative z-10 max-w-4xl">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">Why Trees?</h1>
+          <h1 className="text-5xl md:text-6xl font-bold mb-6">Why We?</h1>
           <p className="text-xl md:text-2xl mb-8">Trees are the most straightforward and cost-effective solution to climate change and biodiversity loss.</p>
           <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
             Plant Trees Now
