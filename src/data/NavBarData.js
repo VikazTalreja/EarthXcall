@@ -28,5 +28,4 @@ export const menuItems = [
       {name : "Our Shop" ,link: "/shop"}
     ]
    },
-  { name: "Why We", link: "/why-we" },
 ];

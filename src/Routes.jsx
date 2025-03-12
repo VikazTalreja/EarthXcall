@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainLayout from "./layout/MainLayout";
-import Home from "./pages/Home";
-import About from "./pages/Aboutus";
-import NotFound from "./pages/NotFound";
-import Home2 from "./pages/Home2";
-import PhilanthropicGiving from "./pages/Philantrophic";
-import Gifitng from "./pages/Gifitng";
-import WhyTrees from "./pages/WhyTrees";
-import DonatePage from "./pages/Donatepage";
-import ProductsPage from "./pages/productPage";
-import AmbassadorsPage from "./pages/Ambassador";
+import MainLayout from "../src/layout/MainLayout";
+import Home from "../src/pages/Home";
+import About from "../src/pages/Aboutus";
+import NotFound from "../src/pages/NotFound";
+import Home2 from "../src/pages/Home2";
+import PhilanthropicGiving from "../src/pages/Philantrophic";
+import Gifitng from "../src/pages/Gifitng";
+import WhyTrees from "../src/pages/WhyTrees";
+import DonatePage from "../src/pages/Donatepage";
+import ProductsPage from "../src/pages/productPage";
+import AmbassadorsPage from "../src/pages/Ambassador";
 // import Home from "./pages/Home3";
 function AppRoutes() {
   return (
