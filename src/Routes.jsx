@@ -1,33 +1,41 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// Add this import
+import DonatePage from "./pages/Donatepage";
+
 import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
-import About from "./pages/Aboutus";
+import About from "./pages/Aboutus";  
 import NotFound from "./pages/NotFound";
-import Home2 from "./pages/Home2";
-import PhilanthropicGiving from "./pages/Philantrophic";
-import Gifitng from "./pages/Gifitng";
-import WhyTrees from "./pages/WhyTrees";
-import DonatePage from "./pages/Donatepage";
-import ProductsPage from "./pages/productPage";
-import AmbassadorsPage from "./pages/Ambassador";
+import PhilanthropicGiving from "./pages/Philanthropic"; 
+import Gifting from "./pages/Gifting";  
+import WhyWe from "./pages/WhyWe";
+import GetInvolved from "./pages/GetInvolved";  
+import WomenEmpowermentFund from "./pages/WomenEmpowermentFund";
+import FarmerSupportFund from "./pages/FarmerSupportFund";
+import UrbanForestry from "./pages/UrbanForestry";
+import ReforestationPlantation from "./pages/ReforestationPlantation";
+import OurFund from "./pages/OurFund";
+import ProductPage from "./pages/productPage";
 
-// import Home from "./pages/Home3";
 function AppRoutes() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          {/* <Route index element={<Home />} /> */}
-          {/* <Route index element={<Home2 />} /> */}
           <Route index element={<Home />} />
-          <Route path="/get-involved/philantrophic-giving" element={<PhilanthropicGiving />}/>
-          <Route path="/get-involved/ambassador" element={<AmbassadorsPage />}/>
           <Route path="/about" element={<About />} />
-          <Route path="/gifting" element={<Gifitng />}/>
-          <Route path="/why-we" element={<WhyTrees />}/>
+          {/* Add the donate route here */}
+          <Route path="/donate" element={<DonatePage />} />
+          <Route path="/get-involved" element={<GetInvolved />} />
+          <Route path="/philanthropic" element={<PhilanthropicGiving />} />
+          <Route path="/gifting" element={<Gifting />} />
+          <Route path="/why-we" element={<WhyWe />} />
+          <Route path="/products" element={<ProductPage />} />
+          <Route path="/our-fund/farmer-support-fund" element={<FarmerSupportFund />} />
+          <Route path="/our-fund/women-empowerment-fund" element={<WomenEmpowermentFund />} />
+          <Route path="/our-fund/reforestation-plantation" element={<ReforestationPlantation />} />
+          <Route path="/our-fund/urban-forestry" element={<UrbanForestry />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/donate" element={<DonatePage />}/>
-          <Route path="/shop" element={<ProductsPage />}/>
         </Route>
       </Routes>
     </Router>

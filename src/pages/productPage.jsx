@@ -23,7 +23,7 @@ const ProductCard = ({ product }) => {
   );
 };
 
-const ProductsPage = () => {
+const ProductPage = () => {
   return (
     <section className="container mx-auto py-10 px-5">
       <h2 className="text-3xl font-bold text-center mb-4">Check out our <br /> products</h2>
@@ -39,4 +39,4 @@ const ProductsPage = () => {
   );
 };
 
-export default ProductsPage;
+export default ProductPage;

@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-const WhyTrees = () => {
+const WhyWe = () => {
   return (
     <div className="bg-white text-gray-900 font-sans">
       {/* Hero Section */}
@@ -238,4 +238,4 @@ const WhyTrees = () => {
   );
 };
 
-export default WhyTrees;
+export default WhyWe;
