@@ -3,7 +3,6 @@ import FloatingDonateButton from "../components/FloatingDonationButton";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import DonationForm from "../components/DonationForm";
-// import { FaTimes } from "react-icons/fa";
 
 const highlights = [
   { number: "100M+", text: "Trees Planted" },

@@ -9,14 +9,17 @@ const About = () => {
       <header 
         className="relative h-screen bg-green-700 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-6" 
         style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1511497584788-876760111969?q=80&w=2070&auto=format&fit=crop')`,
+          backgroundImage: `url('https://images.unsplash.com/photo-1511497584788-876760111969')`,
           backgroundSize: 'cover'
         }}>
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="relative z-10 max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">About EarthXcall</h1>
           <p className="text-xl md:text-2xl mb-8">Dedicated to restoring our planet's forests and ecosystems, one tree at a time.</p>
-          <button className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300">
+          <button 
+            className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
+            aria-label="Join Our Mission"
+          >
             Join Our Mission
           </button>
         </div>
@@ -43,9 +46,10 @@ const About = () => {
               className="rounded-lg overflow-hidden shadow-xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2013&auto=format&fit=crop" 
-                alt="Team planting trees" 
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
+                alt="Team planting trees in a forest" 
                 className="w-full h-auto"
+                loading="lazy"
               />
             </motion.div>
           </div>
