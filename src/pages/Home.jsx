@@ -193,7 +193,7 @@ const Home = () => {
       <div className="max-w-5xl mx-auto overflow-hidden">
         <div
           className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]"
-          style={{ maxHeight: "800px", height: "70vh" }} // Restrict height
+          style={{ maxHeight: "800px", height: "90vh" }} // Restrict height
         >
           {Socialgallery.map((src, index) => (
             <motion.div
@@ -214,6 +214,7 @@ const Home = () => {
         </div>
       </div>
     </section>
+    
       {/* Donation Section */}
       <section className="flex flex-col max-w-7xl mx-auto pb-40 md:flex-row items-center justify-center p-8">
   {/* Left Side - Donation Content */}

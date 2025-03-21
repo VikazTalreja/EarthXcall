@@ -1,7 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// Add this import
 import DonatePage from "./pages/Donatepage";
-
 import MainLayout from "./layout/MainLayout";
 import Home from "./pages/Home";
 import About from "./pages/Aboutus";  
@@ -16,6 +14,7 @@ import UrbanForestry from "./pages/UrbanForestry";
 import ReforestationPlantation from "./pages/ReforestationPlantation";
 import OurFund from "./pages/OurFund";
 import ProductPage from "./pages/productPage";
+import OurTeam from "./pages/OurTeam";
 import Solutions from "./pages/Solutions";
 
 function AppRoutes() {
@@ -25,8 +24,8 @@ function AppRoutes() {
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/team" element={<OurTeam />} />
           <Route path="/about-solutions" element={<Solutions />} />
-          {/* Add the donate route here */}
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/get-involved" element={<GetInvolved />} />
           <Route path="/philanthropic" element={<PhilanthropicGiving />} />
