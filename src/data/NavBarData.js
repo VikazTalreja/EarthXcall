@@ -6,6 +6,7 @@ export const menuItems = [
       { name: "Our Mission", link: "/about#mission" },
       { name: "Our Team", link: "/about#team" },
       { name: "Our Impact", link: "/about#impact" },
+      { name: "Solutions", link: "/about-solutions" },
     ]
   },
   {
