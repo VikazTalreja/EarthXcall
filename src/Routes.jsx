@@ -15,6 +15,7 @@ import ReforestationPlantation from "./pages/ReforestationPlantation";
 import OurFund from "./pages/OurFund";
 import ProductPage from "./pages/productPage";
 import OurTeam from "./pages/OurTeam";
+import Solutions from "./pages/Solutions";
 
 function AppRoutes() {
   return (
@@ -24,6 +25,7 @@ function AppRoutes() {
           <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/team" element={<OurTeam />} />
+          <Route path="/about-solutions" element={<Solutions />} />
           <Route path="/donate" element={<DonatePage />} />
           <Route path="/get-involved" element={<GetInvolved />} />
           <Route path="/philanthropic" element={<PhilanthropicGiving />} />
