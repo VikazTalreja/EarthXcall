@@ -67,63 +67,58 @@ const Home = () => {
 
     <>
       {/* Hero Section */}
-      <section className="relative flex flex-col justify-center bg-[#E8F1F2] py-20 px-6 text-center md:text-left">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          <div className="flex flex-col max-w-2xl">
-            <h1 className="text-4xl font-bold text-[#222C2A] leading-snug">
+      <section style={{ 
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }} className="relative flex flex-col h-screen justify-center bg-[#E8F1F2] py-10 md:py-20 px-4 md:px-6 text-center">
+        <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center gap-8 md:gap-12">
+          <div className="flex flex-col justify-center items-center max-w-2xl px-4">
+            <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight md:leading-snug">
               The science is clear—we can solve the crises of climate change and
               biodiversity loss.
             </h1>
-            <p className="text-[#555D5A] text-lg mt-4">
+            <p className="text-gray-300 text-base md:text-lg mt-3 md:mt-4">
               A roadmap for sustainability, backed by groundbreaking research
               and real-world solutions.
             </p>
-            <button className="mt-6 px-6 py-3 w-48 bg-[#008A7D] text-white font-semibold rounded-lg hover:bg-[#006F65] transition">
+            <button className="mt-4 md:mt-6 px-4 md:px-6 py-2 md:py-3 w-full md:w-48 bg-[#008A7D] text-white font-semibold rounded-lg hover:bg-[#006F65] transition">
               Explore Solutions
             </button>
           </div>
-          <div>
-            <img
-              src={backgroundImage}
-              alt="Background"
-              className="w-full max-w-lg object-contain rounded-lg shadow-lg"
-            />
-          </div>
-
         </div>
       </section>
 
       {/* Cards Section */}
-      <section className="bg-[#F4F7F7] py-16 px-6 text-center">
-      <div className="w-full max-w-7xl mx-auto">
-      
-        <h2 className="text-3xl font-semibold text-[#222C2A]">
-          Our Key Focus Areas
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-          {cardData.map((card, index) => (
-            <div
-              key={card.id}
-              className="bg-white p-6 shadow-lg rounded-lg border border-[#C6D1D2]"
-            >
-              <img
-                src={card.img}
-                alt={card.title}
-                className="w-full h-44 object-cover rounded-lg"
-              />
-              <h3 className="font-semibold text-xl text-[#008A7D] mt-4">
-                {card.title}
-              </h3>
-              <p className="text-[#555D5A] mt-2">{card.text}</p>
-              <button
-                className="mt-4 text-[#008A7D] cursor-pointer hover:bg-teal-800 transition-all duration-300 ease-in-out font-bold text-lg border-2 p-3 rounded-lg hover:underline"
-                onClick={() => scrollToSection(card.id)}
+      <section className="bg-[#F4F7F7] py-12 md:py-16 px-4 md:px-6 text-center">
+        <div className="w-full max-w-7xl mx-auto">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#222C2A]">
+            Our Key Focus Areas
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mt-6 md:mt-10">
+            {cardData.map((card, index) => (
+              <div
+                key={card.id}
+                className="bg-white p-4 md:p-6 shadow-lg rounded-lg border border-[#C6D1D2] flex flex-col"
               >
-                Learn More
-              </button>
-            </div>
-          ))}
-        </div>
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  className="w-full h-36 md:h-44 object-cover rounded-lg"
+                />
+                <h3 className="font-semibold text-lg md:text-xl text-[#008A7D] mt-3 md:mt-4">
+                  {card.title}
+                </h3>
+                <p className="text-[#555D5A] text-sm md:text-base mt-2">{card.text}</p>
+                <button
+                  className="mt-3 md:mt-4 text-[#008A7D] cursor-pointer hover:bg-teal-800 transition-all duration-300 ease-in-out font-bold text-base md:text-lg border-2 p-2 md:p-3 rounded-lg hover:underline w-full"
+                  onClick={() => scrollToSection(card.id)}
+                >
+                  Learn More
+                </button>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -139,49 +134,51 @@ const Home = () => {
 
       {/* CSR Section */}
       <section
-        className="relative h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-6"
+        className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-4 md:px-6 py-16 md:py-0"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=1991&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       >
-      <div className="">
-        {/* Dark Overlay for better readability */}
-        <div className="absolute inset-0 bg-black opacity-80"></div>
+        <div className="w-full">
+          {/* Dark Overlay for better readability */}
+          <div className="absolute inset-0 bg-black opacity-80"></div>
 
-        {/* Content */}
-        <motion.div
-          className="relative z-10 max-w-3xl p-10 text-white text-center rounded-lg"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
-        >
-          <motion.h2
-            className="text-6xl font-extrabold leading-tight bg-gradient-to-r from-teal-400 to-green-300 text-transparent bg-clip-text"
-            initial={{ opacity: 0, y: -20 }}
+          {/* Content */}
+          <motion.div
+            className="relative z-10 max-w-3xl mx-auto p-4 md:p-10 text-white text-center rounded-lg"
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3 }}
+            transition={{ duration: 1 }}
           >
-            Corporate Sustainability
-          </motion.h2>
+            <motion.h2
+              className="text-4xl md:text-6xl font-extrabold leading-tight bg-gradient-to-r from-teal-400 to-green-300 text-transparent bg-clip-text"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.3 }}
+            >
+              Corporate Sustainability
+            </motion.h2>
 
-          <motion.p
-            className="mt-4 text-2xl md:text-3xl text-gray-200 leading-snug"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
-            Partner with us for a sustainable future. Join the movement today.
-          </motion.p>
+            <motion.p
+              className="mt-3 md:mt-4 text-xl md:text-2xl lg:text-3xl text-gray-200 leading-snug"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.5 }}
+            >
+              Partner with us for a sustainable future. Join the movement today.
+            </motion.p>
 
-          <motion.button
-            className="mt-6 px-8 py-4 bg-[#008A7D] text-white text-lg font-semibold rounded-lg hover:bg-[#006F65] transition transform hover:scale-105 shadow-lg"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.8 }}
-          >
-            Learn More
-          </motion.button>
-        </motion.div>
+            <motion.button
+              className="mt-4 md:mt-6 px-6 md:px-8 py-3 md:py-4 bg-[#008A7D] text-white text-base md:text-lg font-semibold rounded-lg hover:bg-[#006F65] transition transform hover:scale-105 shadow-lg w-full md:w-auto"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.8 }}
+            >
+              Learn More
+            </motion.button>
+          </motion.div>
         </div>
       </section>
 
@@ -193,7 +190,7 @@ const Home = () => {
       <div className="max-w-5xl mx-auto overflow-hidden">
         <div
           className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]"
-          style={{ maxHeight: "800px", height: "70vh" }} // Restrict height
+          style={{ maxHeight: "800px", height: "90vh" }} // Restrict height
         >
           {Socialgallery.map((src, index) => (
             <motion.div
@@ -214,40 +211,41 @@ const Home = () => {
         </div>
       </div>
     </section>
-      {/* Donation Section */}
-      <section className="flex flex-col max-w-7xl mx-auto pb-40 md:flex-row items-center justify-center p-8">
-  {/* Left Side - Donation Content */}
-  <div className="md:w-1/2 space-y-6 text-center md:text-left z-10">
-    <h2 className="text-4xl font-bold text-gray-900 leading-tight">
-      Support Our Cause for a <span className="text-green-600">Sustainable Future</span>
-    </h2>
-    <p className="text-gray-600 text-lg">
-      Your contribution helps drive impactful projects. Choose a donation amount and help make a difference today.
-    </p>
     
-    {/* Donation Dropdown + Donate Button */}
-    <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-3">
-      {/* Donation Amount Dropdown */}
-      <select className="px-4 py-3 border border-gray-300 rounded-lg w-64 focus:outline-none focus:ring-2 focus:ring-green-500">
-        <option value="100">₹100</option>
-        <option value="500">₹500</option>
-        <option value="1000">₹1000</option>
-        <option value="5000">₹5000</option>
-        <option value="custom">Custom Amount</option>
-      </select>
-      
-      {/* Donate Now Button */}
-      <button className="px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition">
-        Donate Now
-      </button>
-    </div>
-  </div>
+      {/* Donation Section */}
+      <section className="flex flex-col max-w-7xl mx-auto py-12 md:py-20 px-4 md:px-8">
+        {/* Left Side - Donation Content */}
+        <div className="w-full md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left z-10">
+          <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
+            Support Our Cause for a <span className="text-green-600">Sustainable Future</span>
+          </h2>
+          <p className="text-gray-600 text-base md:text-lg">
+            Your contribution helps drive impactful projects. Choose a donation amount and help make a difference today.
+          </p>
+          
+          {/* Donation Dropdown + Donate Button */}
+          <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-3">
+            {/* Donation Amount Dropdown */}
+            <select className="px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-green-500 text-base">
+              <option value="100">₹100</option>
+              <option value="500">₹500</option>
+              <option value="1000">₹1000</option>
+              <option value="5000">₹5000</option>
+              <option value="custom">Custom Amount</option>
+            </select>
+            
+            {/* Donate Now Button */}
+            <button className="w-full md:w-auto px-4 md:px-6 py-2 md:py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition text-base">
+              Donate Now
+            </button>
+          </div>
+        </div>
 
-  {/* Right Side - Carousel */}
-  <div className="md:w-1/2">
-    <Carousel slides={slides} />
-  </div>
-</section>
+        {/* Right Side - Carousel */}
+        <div className="w-full md:w-1/2 mt-8 md:mt-0 overflow-hidden">
+          <Carousel slides={slides} />
+        </div>
+      </section>
 
 
       {/* Projects & Logo Cloud */}
