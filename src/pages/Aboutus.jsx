@@ -1,41 +1,51 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import SubscribeForm from '../components/subscribe';
+import { ArrowRight } from 'lucide-react';
+
 const About = () => {
   return (
     <div className="bg-white text-gray-900 font-sans">
       
       {/* Hero Section */}
       <header 
-        className="relative h-screen bg-green-700 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-6" 
+        className="relative min-h-[60vh] md:h-screen bg-green-700 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4 sm:px-5 md:px-6 py-16 md:py-0" 
         style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1511497584788-876760111969')`,
-          backgroundSize: 'cover'
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1511497584788-876760111969')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}>
-        <div className="absolute inset-0 bg-black opacity-40"></div>
-        <div className="relative z-10 max-w-4xl">
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">About EarthXcall</h1>
-          <p className="text-xl md:text-2xl mb-8">Dedicated to restoring our planet's forests and ecosystems, one tree at a time.</p>
+        <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-green-900/60 backdrop-blur-[2px]"></div>
+        <div className="relative z-10 max-w-4xl px-4">
+          <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 tracking-tight bg-gradient-to-r from-green-300 to-green-100 text-transparent bg-clip-text">
+            About EarthXcall
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8 leading-relaxed text-green-50">
+            Dedicated to restoring our planet's forests and ecosystems, one tree at a time.
+          </p>
           <button 
-            className="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-8 rounded-lg transition duration-300"
+            className="group w-full sm:w-auto bg-green-600 hover:bg-green-500 text-white font-bold py-2.5 sm:py-3 md:py-4 px-6 sm:px-8 md:px-10 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-black"
             aria-label="Join Our Mission"
           >
             Join Our Mission
+            <ArrowRight className="inline-block ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
           </button>
         </div>
       </header>
 
       {/* Our Mission Section */}
       <SubscribeForm />
-      <section className="py-16 px-4">
+      <section className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 bg-gradient-to-br from-white to-green-50">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-6 text-green-700">Our Mission</h2>
-              <p className="text-lg text-gray-700 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-5 md:space-y-6">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-700 tracking-tight bg-gradient-to-r from-green-700 to-green-500 text-transparent bg-clip-text">
+                Our Mission
+              </h2>
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                 At EarthXcall, we're on a mission to combat climate change and restore biodiversity through large-scale reforestation efforts around the world.
               </p>
-              <p className="text-lg text-gray-700">
+              <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
                 We believe that trees are the most effective, natural solution to many of our planet's most pressing environmental challenges. By working with local communities, governments, and other organizations, we aim to plant billions of trees and restore millions of hectares of degraded land.
               </p>
             </div>
@@ -43,12 +53,12 @@ const About = () => {
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="rounded-lg overflow-hidden shadow-xl"
+              className="rounded-xl overflow-hidden shadow-xl mt-6 md:mt-0 transform hover:scale-[1.02] transition-transform duration-300 group"
             >
               <img 
                 src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
                 alt="Team planting trees in a forest" 
-                className="w-full h-auto"
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
               />
             </motion.div>
@@ -101,46 +111,52 @@ const About = () => {
       </section>
 
       {/* Our Impact Section */}
-      <section className="py-16 px-4 bg-green-50 text-center">
+      <section className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 bg-gradient-to-br from-green-50 to-white text-center">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-green-700 mb-8">Together, We're Creating Change</h2>
-          <h3 className="text-xl font-semibold text-gray-800 mb-4">Our Impact So Far</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <p className="text-4xl font-bold text-green-700">10M+</p>
-              <p className="text-lg text-gray-700">Trees Planted</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-700 mb-4 sm:mb-6 md:mb-8 tracking-tight bg-gradient-to-r from-green-700 to-green-500 text-transparent bg-clip-text">
+            Together, We're Creating Change
+          </h2>
+          <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4">
+            Our Impact So Far
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-6 sm:mb-8 md:mb-12">
+            <div className="group bg-white rounded-lg shadow-lg p-4 sm:p-5 md:p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-xl border border-green-100 hover:border-green-300">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-2 group-hover:text-green-500 transition-colors">10M+</p>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600">Trees Planted</p>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <p className="text-4xl font-bold text-green-700">25+</p>
-              <p className="text-lg text-gray-700">Countries</p>
+            <div className="group bg-white rounded-lg shadow-lg p-4 sm:p-5 md:p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-xl border border-green-100 hover:border-green-300">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-2 group-hover:text-green-500 transition-colors">25+</p>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600">Countries</p>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <p className="text-4xl font-bold text-green-700">5K+</p>
-              <p className="text-lg text-gray-700">Hectares Restored</p>
+            <div className="group bg-white rounded-lg shadow-lg p-4 sm:p-5 md:p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-xl border border-green-100 hover:border-green-300">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-2 group-hover:text-green-500 transition-colors">5K+</p>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600">Hectares Restored</p>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-lg">
-              <p className="text-4xl font-bold text-green-700">100+</p>
-              <p className="text-lg text-gray-700">Community Partners</p>
+            <div className="group bg-white rounded-lg shadow-lg p-4 sm:p-5 md:p-6 transform hover:scale-[1.02] transition-all duration-300 hover:shadow-xl border border-green-100 hover:border-green-300">
+              <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-600 mb-2 group-hover:text-green-500 transition-colors">100+</p>
+              <p className="text-sm sm:text-base md:text-lg text-gray-600">Community Partners</p>
             </div>
           </div>
         </div>
       </section>
 
-      
-
       {/* CTA Section */}
-      <section className="py-20 px-4 bg-green-700 text-white text-center">
+      <section className="py-12 sm:py-16 md:py-20 px-4 sm:px-6 bg-gradient-to-br from-green-600 to-green-700 text-white text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Join Our Mission</h2>
-          <p className="text-xl mb-8">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 tracking-tight bg-gradient-to-r from-green-200 to-white text-transparent bg-clip-text">
+            Join Our Mission
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 md:mb-10 leading-relaxed text-green-50">
             Together, we can restore our planet's forests and create a more sustainable future for all.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <button className="bg-white text-green-700 hover:bg-gray-100 font-bold py-3 px-8 rounded-lg transition duration-300">
+            <button className="group w-full sm:w-auto bg-white text-green-600 hover:text-green-700 hover:bg-green-50 font-bold py-2.5 sm:py-3 md:py-4 px-6 sm:px-8 md:px-10 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700">
               Get Involved
+              <ArrowRight className="inline-block ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
             </button>
-            <button className="bg-transparent hover:bg-green-800 border-2 border-white font-bold py-3 px-8 rounded-lg transition duration-300">
+            <button className="group w-full sm:w-auto bg-transparent hover:bg-green-800 border-2 border-white font-bold py-2.5 sm:py-3 md:py-4 px-6 sm:px-8 md:px-10 rounded-lg transition-all duration-300 transform hover:scale-[1.02] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-700">
               Donate Now
+              <ArrowRight className="inline-block ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </div>

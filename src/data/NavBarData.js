@@ -1,36 +1,38 @@
 export const menuItems = [
   { 
     name: "About", 
-    link: "/about",
+    
     subMenu: [
-      { name: "Our Mission", link: "/about#mission" },
-      { name: "Our Team", link: "/team" },
-      { name: "Our Impact", link: "/about#impact" },
-      { name: "Solutions", link: "/about-solutions" },
+      { name: "Our Mission", link: "/about/mission" },
+      { name: "Our Team", link: "/about/team" },
+      // { name: "Our Impact", link: "/about/impact" },
+      { name: "Solutions", link: "/about/solutions" },
     ]
   },
   {
     name: "Get Involved",
-    link: "/get-involved",
     subMenu: [
       { 
         name: "Our Funds", 
-        link: "/our-fund",
         subItems: [
-          { name: "Farmer Support Fund", link: "/our-fund/farmer-support-fund" },
-          { name: "Women's Empowerment Fund", link: "/our-fund/women-empowerment-fund" },
-          { name: "Reforestation Plantation", link: "/our-fund/reforestation-plantation" },
-          { name: "Urban Forestry", link: "/our-fund/urban-forestry" }
+          { name: "Farmer Support Fund", link:"/get-involved/our-fund/farmer-support-fund" },
+          { name: "Women's Empowerment Fund", link:"/get-involved/our-fund/women-empowerment-fund" },
+          { name: "Reforestation Plantation", link:"/get-involved/our-fund/reforestation-plantation" },
+          { name: "Urban Forestry", link: "/get-involved/our-fund/urban-forestry" }
         ]
       },
-      { 
-        name: "Philanthropy", 
-        link: "/philanthropic"
-      },
+      // { 
+      //   name: "Philanthropy", 
+      //   link: "/philanthropic"
+      // },
       { 
         name: "Corporate Sustainability", 
-        link: "/corporate-sustainability" 
+        link: "/csr" 
       },
+      {
+        name:"Ambassador",
+        link:"/ambassador"
+      }
     ]
   },
   { 
@@ -43,9 +45,9 @@ export const menuItems = [
   },
   { 
     name: "Gifting", 
-    link: "/gifting",
+    link: "",
     subMenu: [
-      { name: "Gift Trees", link: "/gifting" },
+      { name: "Gift Trees", link: "/gifting/gift-trees" },
       { name: "Our Shop", link: "/productpage" }
     ]
   },

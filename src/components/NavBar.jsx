@@ -8,14 +8,17 @@ const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [activeSubItem, setActiveSubItem] = useState(null);
+  const [isTransparent, setIsTransparent] = useState(true);
 
   const handleScroll = () => {
     const currentScrollY = window.scrollY;
     
     if (currentScrollY > lastScrollY && currentScrollY > 50) {
-      setIsVisible(false); 
+      setIsVisible(false);
+      setIsTransparent(false);
     } else {
-      setIsVisible(true); 
+      setIsVisible(true);
+      setIsTransparent(currentScrollY <= 500);
     }
 
     setLastScrollY(currentScrollY);
@@ -26,9 +29,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  const closeMenu = () => {
+    setMenuOpen(false);
+    setOpenSubMenu(null);
+  };
+
   return (
-    <header className={`fixed top-0 left-0 w-full bg-white text-green-700 shadow-md z-50 transition-transform duration-300 ${
-      isVisible ? "translate-y-0" : "-translate-y-full"
+    <header className={`fixed top-0 left-0 w-full ${isTransparent ? 'bg-transparent' : 'bg-black/40 backdrop-filter backdrop-blur-lg shadow-lg'} text-white z-50 transition-all duration-300 ${
+      isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Left Side - Logo */}
@@ -120,10 +128,10 @@ const Navbar = () => {
           <a href="/donate" className="bg-green-700 text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-bold hover:scale-105 transition">
             Donate
           </a>
-          <a href="#" className="bg-green-700 text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-bold hover:scale-105 transition">
+          <a href="/csr" className="bg-green-700 text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-bold hover:scale-105 transition">
             CSR
           </a>
-          <a href="#" className="bg-green-700 text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-bold hover:scale-105 transition">
+          <a href="/donate-land" className="bg-green-700 text-sm text-[#F1F0E9] px-4 py-2 rounded-lg font-bold hover:scale-105 transition">
             Donate Land
           </a>
         </div>
@@ -135,24 +143,41 @@ const Navbar = () => {
       </nav>
 
       {/* Mobile Menu */}
-      <div className={`fixed inset-0 bg-white h-screen z-50 transition-transform duration-300 ${menuOpen ? "translate-y-0" : "-translate-y-full"} md:hidden`}>
-        <ul className="flex flex-col items-center py-6 space-y-2">
+      <div className={`fixed inset-0 bg-white text-black h-screen z-50 transition-transform duration-300 ${menuOpen ? "translate-y-0" : "-translate-y-full"} md:hidden`}>
+        {/* Close button in top-right corner */}
+        <button 
+          onClick={closeMenu}
+          className="absolute top-4 right-4 p-2 text-2xl hover:text-green-600 transition-colors"
+          aria-label="Close menu"
+        >
+          <FaTimes />
+        </button>
+
+        <ul className="flex flex-col items-center pt-16 pb-6 space-y-2">
           {menuItems.map((item, index) => (
             <li key={index} className="w-full text-center">
               <button
-                className="w-full py-2 flex items-center justify-center hover:text-green-400 transition"
+                className="w-full py-2 flex items-center justify-center hover:text-green-600 transition"
                 onClick={() => setOpenSubMenu(openSubMenu === index ? null : index)}
               >
                 {item.name}
-                {item.subMenu && <FaChevronDown className="ml-2 text-xs" />}
+                {item.subMenu && (
+                  <FaChevronDown className={`ml-2 text-xs transition-transform duration-300 ${
+                    openSubMenu === index ? 'rotate-180' : ''
+                  }`} />
+                )}
               </button>
 
               {/* Mobile Dropdown */}
               {item.subMenu && openSubMenu === index && (
-                <ul className="mt-2 bg-gray-100 rounded-md">
+                <ul className="mt-2 bg-gray-100 rounded-md w-full">
                   {item.subMenu.map((subItem, subIndex) => (
-                    <li key={subIndex} className="hover:bg-gray-300">
-                      <a href={subItem.link} className="block px-6 py-2 flex items-center justify-between">
+                    <li key={subIndex} className="hover:bg-gray-200">
+                      <a 
+                        href={subItem.link} 
+                        className="block px-6 py-2 flex items-center justify-between"
+                        onClick={closeMenu}
+                      >
                         {subItem.name}
                         {subItem.subItems && (
                           <svg 
@@ -177,9 +202,27 @@ const Navbar = () => {
               )}
             </li>
           ))}
-          <li className="mt-4">
-            <a href="/donate" className="bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:scale-105 transition">
+          <li className="mt-4 space-y-2">
+            <a 
+              href="/donate" 
+              className="block bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition text-center"
+              onClick={closeMenu}
+            >
               Donate Now
+            </a>
+            <a 
+              href="/csr" 
+              className="block bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition text-center"
+              onClick={closeMenu}
+            >
+              CSR
+            </a>
+            <a 
+              href="/donate-land" 
+              className="block bg-green-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-600 transition text-center"
+              onClick={closeMenu}
+            >
+              Donate Land
             </a>
           </li>
         </ul>
