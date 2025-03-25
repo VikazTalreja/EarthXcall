@@ -91,9 +91,11 @@ const WomenEmpowermentFund = () => {
               className="rounded-lg overflow-hidden shadow-xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1621352404112-58e2468993a0?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1621352404112-58e2468993a0?q=80&w=2070&auto=format&fit=crop&fm=webp" 
                 alt="Women in conservation" 
                 className="w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>
@@ -161,9 +163,11 @@ const WomenEmpowermentFund = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1541802645635-11f2286a7482?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1541802645635-11f2286a7482?q=80&w=2070&auto=format&fit=crop&fm=webp" 
                 alt="Women's cooperative in India" 
                 className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">Priya's Story: India</h3>
@@ -181,10 +185,11 @@ const WomenEmpowermentFund = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1596638787647-904d822d751e?q=80&w=2071&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1596638787647-904d822d751e?q=80&w=2071&auto=format&fit=crop&fm=webp" 
                 alt="Community leader in India" 
                 className="w-full h-64 object-cover"
                 loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">Josephine's Story: Rwanda</h3>

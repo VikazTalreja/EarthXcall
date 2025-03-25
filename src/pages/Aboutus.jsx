@@ -11,9 +11,8 @@ const About = () => {
       <header 
         className="relative min-h-[60vh] md:h-screen bg-green-700 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4 sm:px-5 md:px-6 py-16 md:py-0" 
         style={{ 
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1511497584788-876760111969')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundImage: `url('https://images.unsplash.com/photo-1511497584788-876760111969?w=1920&h=1080&auto=format&fit=crop&q=80')`,
+          backgroundSize: 'cover'
         }}>
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-green-900/60 backdrop-blur-[2px]"></div>
         <div className="relative z-10 max-w-4xl px-4">
@@ -56,10 +55,11 @@ const About = () => {
               className="rounded-xl overflow-hidden shadow-xl mt-6 md:mt-0 transform hover:scale-[1.02] transition-transform duration-300 group"
             >
               <img 
-                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09" 
+                src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&h=600&auto=format&fit=crop&fm=webp&q=80" 
                 alt="Team planting trees in a forest" 
                 className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
                 loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>
@@ -78,9 +78,11 @@ const About = () => {
               className="rounded-lg overflow-hidden shadow-xl md:order-2"
             >
               <img 
-                src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?q=80&w=2070&auto=format&fit=crop&fm=webp&q=80" 
                 alt="Forest landscape" 
                 className="w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
             <div className="md:order-1">

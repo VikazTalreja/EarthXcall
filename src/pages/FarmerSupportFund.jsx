@@ -90,9 +90,11 @@ const FarmerSupportFund = () => {
               className="rounded-lg overflow-hidden shadow-xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070&auto=format&fit=crop&fm=webp" 
                 alt="Sustainable farming" 
                 className="w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>
@@ -160,9 +162,11 @@ const FarmerSupportFund = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?q=80&w=2070&auto=format&fit=crop&fm=webp" 
                 alt="Farmer in Kenya" 
                 className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">Maria's Story: Kenya</h3>
@@ -180,9 +184,11 @@ const FarmerSupportFund = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop&fm=webp" 
                 alt="Farmer in Colombia" 
                 className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">Carlos's Story: Colombia</h3>

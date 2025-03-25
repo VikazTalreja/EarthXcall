@@ -96,9 +96,11 @@ const UrbanForestry = () => {
               className="rounded-lg overflow-hidden shadow-xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1575783970733-1aaedde1db74?q=80&w=2076&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1575783970733-1aaedde1db74?q=80&w=2076&auto=format&fit=crop&fm=webp" 
                 alt="Urban tree planting" 
                 className="w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>
@@ -161,9 +163,11 @@ const UrbanForestry = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1516241720465-4b63b9c0e0e4?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1624880357913-a8539238245b?w=1200&auto=format&fit=crop&fm=webp&q=80" 
                 alt="Street trees" 
                 className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">City Streets & Parks</h3>
@@ -178,9 +182,11 @@ const UrbanForestry = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1558441440-d4111d18d48f?q=80&w=2070&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1558441440-d4111d18d48f?q=80&w=2070&auto=format&fit=crop&fm=webp" 
                 alt="Community garden" 
                 className="w-full h-64 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">Underserved Neighborhoods</h3>

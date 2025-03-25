@@ -6,11 +6,10 @@ const Gifting = () => {
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900 font-sans min-h-screen pb-16">
       {/* Hero Section */}
       <div className="relative h-[600px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-green-500"></div>
         <img 
           src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80" 
           alt="Forest" 
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          className="absolute inset-0 w-full h-full object-cover"
         />
         <motion.div 
           initial={{ opacity: 0, y: -50 }}
@@ -27,7 +26,7 @@ const Gifting = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-8 px-8 py-4 bg-white text-green-700 font-semibold rounded-lg shadow-xl hover:bg-green-50 transition-all duration-300 text-lg"
+            className="mt-8 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg shadow-xl hover:bg-green-700 transition-all duration-300 text-lg"
           >
             Donate Now
           </motion.button>
@@ -85,8 +84,10 @@ const Gifting = () => {
         <h2 className="text-3xl font-bold text-green-800 mb-6">WHY GIFT A TREE?</h2>
         <div className="w-24 h-1 bg-green-500 mx-auto mb-8"></div>
         <img 
-          src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1748&q=80" 
+          src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1748&q=80&fm=webp" 
           alt="Nature" 
+          loading="lazy"
+          decoding="async"
           className="w-full max-w-3xl mx-auto rounded-lg shadow-lg mb-12"
         />
         <p className="text-gray-700 text-lg max-w-3xl mx-auto mb-12">

@@ -83,6 +83,7 @@ const ReforestationPlantation = () => {
                 Through strategic partnerships with local communities and environmental experts, we implement sustainable reforestation projects that benefit both the environment and local economies.
               </p>
             </div>
+            {/* Impact Metrics Section Images */}
             <motion.div 
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -90,9 +91,11 @@ const ReforestationPlantation = () => {
               className="rounded-lg overflow-hidden shadow-xl"
             >
               <img 
-                src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=2088&auto=format&fit=crop" 
+                src="https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?q=80&w=2088&auto=format&fit=crop&fm=webp" 
                 alt="Tree planting" 
                 className="w-full h-auto"
+                loading="lazy"
+                decoding="async"
               />
             </motion.div>
           </div>
@@ -159,9 +162,11 @@ const ReforestationPlantation = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1586984478679-4c4bc2d97b3c?q=80&w=2070&auto=format&fit=crop" 
-                alt="Amazon Rainforest" 
+                src="https://images.unsplash.com/photo-1535913989690-f90e1c2d4cfa?w=800&auto=format&fit=crop&fm=webp"
+                alt="Amazon Rainforest"
                 className="w-full h-48 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">Amazon Restoration</h3>
@@ -176,9 +181,11 @@ const ReforestationPlantation = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1621632361333-4649f0e589d4?q=80&w=2070&auto=format&fit=crop" 
-                alt="African Savanna" 
+                src="https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&auto=format&fit=crop&fm=webp"
+                alt="African Savanna"
                 className="w-full h-48 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">African Woodlands</h3>
@@ -193,9 +200,11 @@ const ReforestationPlantation = () => {
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
               <img 
-                src="https://images.unsplash.com/photo-1598985670407-4d1fe5f0b00c?q=80&w=2070&auto=format&fit=crop" 
-                alt="Southeast Asian Forest" 
+                src="https://images.unsplash.com/photo-1596005554384-d293674c91d7?w=800&auto=format&fit=crop&fm=webp"
+                alt="Southeast Asian Forest"
                 className="w-full h-48 object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="p-6">
                 <h3 className="text-xl font-bold mb-3">Asian Forests</h3>
