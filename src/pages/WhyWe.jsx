@@ -6,11 +6,14 @@ const WhyWe = () => {
     <div className="bg-white text-gray-900 font-sans">
       {/* Hero Section */}
       <header 
-        className="relative h-screen bg-green-900 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-6" 
-        style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1448375240586-882707db888b?q=80&w=2070&auto=format&fit=crop')`,
-          backgroundSize: 'cover'
-        }}>
+        className="relative h-screen bg-green-900 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-6">
+        <img 
+          src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&h=1080&auto=format&fit=crop&q=80&fm=webp"
+          alt="Forest background"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="relative z-10 max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Why We?</h1>
@@ -37,7 +40,13 @@ const WhyWe = () => {
             whileHover={{ y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            <img src="https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80" alt="Clean Air" className="w-full h-48 object-cover" />
+            <img 
+              src="https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?w=800&h=600&auto=format&fit=crop&fm=webp&q=80" 
+              alt="Clean Air" 
+              className="w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-green-700 mb-3">Air</h3>
               <p className="text-gray-700">
@@ -52,7 +61,13 @@ const WhyWe = () => {
             whileHover={{ y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?q=80&w=2070&auto=format&fit=crop" alt="Clean Water" className="w-full h-48 object-cover" />
+            <img 
+              src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=800&h=600&auto=format&fit=crop&fm=webp&q=80" 
+              alt="Clean Water" 
+              className="w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-blue-700 mb-3">Water</h3>
               <p className="text-gray-700">
@@ -67,7 +82,13 @@ const WhyWe = () => {
             whileHover={{ y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            <img src="https://images.unsplash.com/photo-1504392022767-a8fc0771f239?q=80&w=1974&auto=format&fit=crop" alt="Biodiversity" className="w-full h-48 object-cover" />
+            <img 
+              src="https://images.unsplash.com/photo-1504392022767-a8fc0771f239?w=800&h=600&auto=format&fit=crop&fm=webp&q=80" 
+              alt="Biodiversity" 
+              className="w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-yellow-700 mb-3">Biodiversity</h3>
               <p className="text-gray-700">
@@ -82,7 +103,13 @@ const WhyWe = () => {
             whileHover={{ y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            <img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=1974&auto=format&fit=crop" alt="Social Impact" className="w-full h-48 object-cover" />
+            <img 
+              src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=800&h=600&auto=format&fit=crop&fm=webp&q=80" 
+              alt="Social Impact" 
+              className="w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-purple-700 mb-3">Social Impact</h3>
               <p className="text-gray-700">
@@ -97,7 +124,13 @@ const WhyWe = () => {
             whileHover={{ y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=2022&auto=format&fit=crop" alt="Health" className="w-full h-48 object-cover" />
+            <img 
+              src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&h=600&auto=format&fit=crop&fm=webp&q=80" 
+              alt="Health" 
+              className="w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-red-700 mb-3">Health</h3>
               <p className="text-gray-700">
@@ -112,7 +145,13 @@ const WhyWe = () => {
             whileHover={{ y: -10 }}
             transition={{ duration: 0.3 }}
           >
-            <img src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?q=80&w=2074&auto=format&fit=crop" alt="Climate" className="w-full h-48 object-cover" />
+            <img 
+              src="https://images.unsplash.com/photo-1476231682828-37e571bc172f?w=800&h=600&auto=format&fit=crop&fm=webp&q=80" 
+              alt="Climate" 
+              className="w-full h-48 object-cover"
+              loading="lazy"
+              decoding="async"
+            />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-teal-700 mb-3">Climate</h3>
               <p className="text-gray-700">

@@ -64,9 +64,9 @@ const GetInvolved = () => {
   };
 
   return (
-    <div className="bg-[#F1F0E9] min-h-screen py-12 px-4">
+    <div className="bg-green-100 min-h-screen py-12 px-4">
       <div className="max-w-2xl mx-auto space-y-6">
-        <h1 className="text-3xl font-bold text-[#0D4715] text-center mb-8">
+        <h1 className="text-3xl font-bold text-green-800 text-center mb-8">
           Get Involved
         </h1>
         
