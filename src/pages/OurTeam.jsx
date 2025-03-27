@@ -145,19 +145,17 @@ const OurTeam = () => {
   return (
     <div className="pt-20 bg-white">
       <section 
-        className="text-center py-32 bg-green-50 relative h-[100vh] flex items-center justify-center"
-        style={{
-          backgroundImage: `url('https://images.unsplash.com/photo-1552083375-1447ce886485?w=1920&h=1080&auto=format&fit=crop&q=80')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat',
-          width: '100%',
-          marginTop: '-80px',
-          paddingTop: '80px'
-        }}
+        className="relative min-h-screen w-full flex items-center justify-center -mt-20"
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-4">
+        <img 
+          src="https://images.unsplash.com/photo-1552083375-1447ce886485?w=1920&h=1080&auto=format&fit=crop&q=80&fm=webp"
+          alt="Team hero background"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 pt-16">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

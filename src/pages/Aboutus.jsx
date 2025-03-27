@@ -10,10 +10,14 @@ const About = () => {
       {/* Hero Section */}
       <header 
         className="relative min-h-[60vh] md:h-screen bg-green-700 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-4 sm:px-5 md:px-6 py-16 md:py-0" 
-        style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1511497584788-876760111969?w=1920&h=1080&auto=format&fit=crop&q=80')`,
-          backgroundSize: 'cover'
-        }}>
+      >
+        <img 
+          src="https://images.unsplash.com/photo-1511497584788-876760111969?w=1920&h=1080&auto=format&fit=crop&q=80&fm=webp"
+          alt="Hero background"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-br from-black/60 to-green-900/60 backdrop-blur-[2px]"></div>
         <div className="relative z-10 max-w-4xl px-4">
           <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 tracking-tight bg-gradient-to-r from-green-300 to-green-100 text-transparent bg-clip-text">

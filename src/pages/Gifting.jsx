@@ -7,10 +7,13 @@ const Gifting = () => {
       {/* Hero Section */}
       <div className="relative h-[600px] overflow-hidden">
         <img 
-          src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80" 
-          alt="Forest" 
+          src="https://images.unsplash.com/photo-1516571137133-1be29e37143a?q=80&w=2074&auto=format&fit=crop&fm=webp" 
+          alt="Forest Sunrise" 
           className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
+        <div className="absolute inset-0 bg-black opacity-40"></div>
         <motion.div 
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -93,7 +96,7 @@ const Gifting = () => {
         <p className="text-gray-700 text-lg max-w-3xl mx-auto mb-12">
           Trees are essential for life. They combat climate change, protect wildlife, and improve air quality. By gifting a tree, you contribute to a greener planet and a better future for generations to come.
         </p>
-        <div className="flex justify-center gap-8 p-6 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row flex-wrap justify-center gap-8 p-6 max-w-5xl mx-auto">
           {[
             {title: "Quality Projects", icon: "🌱"},
             {title: "Community Benefits", icon: "👥"},
@@ -106,7 +109,7 @@ const Gifting = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index }}
               whileHover={{ y: -10 }}
-              className="bg-white p-8 shadow-lg rounded-xl w-64 text-center border-t-4 border-green-500 hover:shadow-xl transition-all"
+              className="bg-white p-8 shadow-lg rounded-xl w-full md:w-64 text-center border-t-4 border-green-500 hover:shadow-xl transition-all"
             >
               <div className="text-4xl mb-4">{benefit.icon}</div>
               <p className="text-lg font-semibold text-green-800">{benefit.title}</p>

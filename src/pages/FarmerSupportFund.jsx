@@ -1,15 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const FarmerSupportFund = () => {
+  const [currency, setCurrency] = useState({
+    symbol: '₹',
+    code: 'INR',
+    amounts: [5, 20, 50, 100]
+  });
+
+  const currencies = {
+    INR: { symbol: '₹', amounts: [5, 20, 50, 100] },
+    USD: { symbol: '$', amounts: [1, 5, 10, 20] },
+    EUR: { symbol: '€', amounts: [1, 5, 10, 20] }
+  };
+
+  const handleCurrencyChange = (e) => {
+    const selectedCurrency = e.target.value;
+    setCurrency({
+      symbol: currencies[selectedCurrency].symbol,
+      code: selectedCurrency,
+      amounts: currencies[selectedCurrency].amounts
+    });
+  };
+
   return (
     <div className="bg-white text-gray-900 font-sans">
       {/* Hero Section */}
-      <header className="relative min-h-[800px] bg-green-700 bg-cover bg-center flex flex-col md:flex-row items-start md:items-center justify-between p-6 md:p-12" 
-        style={{ 
-          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop')`,
-          backgroundSize: 'cover'
-        }}>
+      <header className="relative min-h-[800px] bg-green-700 flex flex-col md:flex-row items-start md:items-center justify-between p-6 md:p-12">
+        <img 
+          src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop&fm=webp"
+          alt="Farmer support background"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 max-w-2xl text-white mt-20 md:mt-0">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Support Our Farmers!</h1>
           <p className="text-lg md:text-xl lg:text-2xl mb-8">Empowering farmers through sustainable agriculture and community development</p>
@@ -34,34 +59,47 @@ const FarmerSupportFund = () => {
 
           <p className="text-xs uppercase tracking-wider text-gray-600 mb-4">SELECT AN AMOUNT TO DONATE:</p>
           <div className="grid grid-cols-3 gap-3 mb-4">
-            <button className="bg-white hover:bg-gray-100 text-gray-700 font-bold py-2 px-3 rounded border border-gray-300 text-sm">
-              ₹5
-            </button>
-            <button className="bg-[#98A4AE] hover:bg-[#7A8793] text-white font-bold py-2 px-3 rounded text-sm">
-              ₹20
-            </button>
-            <button className="bg-white hover:bg-gray-100 text-gray-700 font-bold py-2 px-3 rounded border border-gray-300 text-sm">
-              ₹50
-            </button>
+            {currency.amounts.slice(0, 3).map((amount, index) => (
+              <button key={index} className={`${index === 1 ? 'bg-[#98A4AE] hover:bg-[#7A8793] text-white' : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-300'} font-bold py-2 px-3 rounded text-sm`}>
+                {currency.symbol}{amount}
+              </button>
+            ))}
           </div>
 
           <div className="grid grid-cols-2 gap-3 mb-6">
             <button className="bg-white hover:bg-gray-100 text-gray-700 font-bold py-2 px-3 rounded border border-gray-300 text-sm">
-              ₹100
+              {currency.symbol}{currency.amounts[3]}
             </button>
             <button className="bg-white hover:bg-gray-100 text-gray-700 font-bold py-2 px-3 rounded border border-gray-300 text-sm">
               Other
             </button>
           </div>
 
-          <div className="flex items-center gap-2 mb-6 bg-white rounded border border-gray-300 p-2">
-            <span className="text-gray-700 text-sm">₹</span>
-            <input 
-              type="number" 
-              className="flex-1 outline-none text-sm"
-              placeholder="20"
-            />
-            <span className="text-gray-700 text-sm">INR</span>
+          <div className="flex items-center mb-6 bg-white rounded border border-gray-300">
+            <div className="flex-1 flex items-center px-3">
+              <span className="text-gray-700 text-sm mr-2">{currency.symbol}</span>
+              <input 
+                type="number" 
+                className="w-full outline-none text-sm py-2"
+                placeholder="20"
+              />
+            </div>
+            <div className="relative">
+              <select 
+                className="appearance-none bg-transparent border-l border-gray-300 py-2 px-3 pr-8 text-sm text-gray-700 cursor-pointer hover:bg-gray-50 focus:outline-none"
+                value={currency.code}
+                onChange={handleCurrencyChange}
+              >
+                <option>INR</option>
+                <option>USD</option>
+                <option>EUR</option>
+              </select>
+              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                  <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
+                </svg>
+              </div>
+            </div>
           </div>
 
           <button className="w-full bg-[#1B3044] hover:bg-[#0D1821] text-white font-bold py-3 px-4 rounded text-sm uppercase">

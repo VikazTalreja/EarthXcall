@@ -6,11 +6,14 @@ const WhyWe = () => {
     <div className="bg-white text-gray-900 font-sans">
       {/* Hero Section */}
       <header 
-        className="relative h-screen bg-green-900 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-6" 
-        style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&h=1080&auto=format&fit=crop&q=80')`,
-          backgroundSize: 'cover'
-        }}>
+        className="relative h-screen bg-green-900 bg-cover bg-center flex flex-col items-center justify-center text-white text-center px-6">
+        <img 
+          src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=1920&h=1080&auto=format&fit=crop&q=80&fm=webp"
+          alt="Forest background"
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="relative z-10 max-w-4xl">
           <h1 className="text-5xl md:text-6xl font-bold mb-6">Why We?</h1>
@@ -43,10 +46,6 @@ const WhyWe = () => {
               className="w-full h-48 object-cover"
               loading="lazy"
               decoding="async"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = 'https://via.placeholder.com/800x600?text=Clean+Air';
-              }}
             />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-green-700 mb-3">Air</h3>
@@ -68,10 +67,6 @@ const WhyWe = () => {
               className="w-full h-48 object-cover"
               loading="lazy"
               decoding="async"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = 'https://via.placeholder.com/800x600?text=Clean+Water';
-              }}
             />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-blue-700 mb-3">Water</h3>
@@ -93,10 +88,6 @@ const WhyWe = () => {
               className="w-full h-48 object-cover"
               loading="lazy"
               decoding="async"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = 'https://via.placeholder.com/800x600?text=Biodiversity';
-              }}
             />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-yellow-700 mb-3">Biodiversity</h3>
@@ -118,10 +109,6 @@ const WhyWe = () => {
               className="w-full h-48 object-cover"
               loading="lazy"
               decoding="async"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = 'https://via.placeholder.com/800x600?text=Social+Impact';
-              }}
             />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-purple-700 mb-3">Social Impact</h3>
@@ -143,10 +130,6 @@ const WhyWe = () => {
               className="w-full h-48 object-cover"
               loading="lazy"
               decoding="async"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = 'https://via.placeholder.com/800x600?text=Health';
-              }}
             />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-red-700 mb-3">Health</h3>
@@ -168,10 +151,6 @@ const WhyWe = () => {
               className="w-full h-48 object-cover"
               loading="lazy"
               decoding="async"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = 'https://via.placeholder.com/800x600?text=Climate';
-              }}
             />
             <div className="p-6">
               <h3 className="text-2xl font-bold text-teal-700 mb-3">Climate</h3>
