@@ -6,12 +6,14 @@ const Gifting = () => {
     <div className="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-900 font-sans min-h-screen pb-16">
       {/* Hero Section */}
       <div className="relative h-[600px] overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-green-700 to-green-500"></div>
         <img 
-          src="https://images.unsplash.com/photo-1473448912268-2022ce9509d8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1742&q=80" 
-          alt="Forest" 
-          className="absolute inset-0 w-full h-full object-cover opacity-40"
+          src="https://images.unsplash.com/photo-1516571137133-1be29e37143a?q=80&w=2074&auto=format&fit=crop&fm=webp" 
+          alt="Forest Sunrise" 
+          className="absolute inset-0 w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
         />
+        <div className="absolute inset-0 bg-black opacity-40"></div>
         <motion.div 
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -27,7 +29,7 @@ const Gifting = () => {
           <motion.button 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-8 px-8 py-4 bg-white text-green-700 font-semibold rounded-lg shadow-xl hover:bg-green-50 transition-all duration-300 text-lg"
+            className="mt-8 px-8 py-4 bg-green-600 text-white font-semibold rounded-lg shadow-xl hover:bg-green-700 transition-all duration-300 text-lg"
           >
             Donate Now
           </motion.button>
@@ -85,14 +87,16 @@ const Gifting = () => {
         <h2 className="text-3xl font-bold text-green-800 mb-6">WHY GIFT A TREE?</h2>
         <div className="w-24 h-1 bg-green-500 mx-auto mb-8"></div>
         <img 
-          src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1748&q=80" 
+          src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1748&q=80&fm=webp" 
           alt="Nature" 
+          loading="lazy"
+          decoding="async"
           className="w-full max-w-3xl mx-auto rounded-lg shadow-lg mb-12"
         />
         <p className="text-gray-700 text-lg max-w-3xl mx-auto mb-12">
           Trees are essential for life. They combat climate change, protect wildlife, and improve air quality. By gifting a tree, you contribute to a greener planet and a better future for generations to come.
         </p>
-        <div className="flex justify-center gap-8 p-6 max-w-5xl mx-auto">
+        <div className="flex flex-col md:flex-row flex-wrap justify-center gap-8 p-6 max-w-5xl mx-auto">
           {[
             {title: "Quality Projects", icon: "🌱"},
             {title: "Community Benefits", icon: "👥"},
@@ -105,7 +109,7 @@ const Gifting = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * index }}
               whileHover={{ y: -10 }}
-              className="bg-white p-8 shadow-lg rounded-xl w-64 text-center border-t-4 border-green-500 hover:shadow-xl transition-all"
+              className="bg-white p-8 shadow-lg rounded-xl w-full md:w-64 text-center border-t-4 border-green-500 hover:shadow-xl transition-all"
             >
               <div className="text-4xl mb-4">{benefit.icon}</div>
               <p className="text-lg font-semibold text-green-800">{benefit.title}</p>

@@ -1,8 +1,12 @@
 import backgroundImage from "../assets/HomeBg.jpg";
 import { useState, useEffect , useId, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
 const Home = () => {
+
+
+  const router = useNavigate();
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
@@ -51,16 +55,9 @@ const Home = () => {
 
 
   const logos = [
-    "https://via.placeholder.com/100", // Replace these with your actual logo URLs
-    "https://via.placeholder.com/100",
-    "https://via.placeholder.com/100",
-    "https://via.placeholder.com/100",
-    "https://via.placeholder.com/100",
-    "https://via.placeholder.com/100",
-    "https://via.placeholder.com/100",
-    "https://via.placeholder.com/100",
-    "https://via.placeholder.com/100",
-    "https://via.placeholder.com/100",
+    "/PartnerLogo1.png",
+    "/PartnerLogo2.png",
+    "/PartnerLogo3.png"
   ];
 
   return (
@@ -82,7 +79,7 @@ const Home = () => {
               A roadmap for sustainability, backed by groundbreaking research
               and real-world solutions.
             </p>
-            <button className="mt-4 md:mt-6 px-4 md:px-6 py-2 md:py-3 w-full md:w-48 bg-[#008A7D] text-white font-semibold rounded-lg hover:bg-[#006F65] transition">
+            <button className="mt-4 md:mt-6 px-4 md:px-6 py-2 md:py-3 w-full md:w-48 bg-[#008A7D] text-white font-semibold rounded-lg hover:bg-[#006F65] cursor-pointer transition" onClick={()=>{router("/about/solutions")}}>
               Explore Solutions
             </button>
           </div>
@@ -190,7 +187,7 @@ const Home = () => {
       <div className="max-w-5xl mx-auto overflow-hidden">
         <div
           className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]"
-          style={{ maxHeight: "800px", height: "90vh" }} // Restrict height
+          style={{ maxHeight: "800px", height: "70vh" }} // Restrict height
         >
           {Socialgallery.map((src, index) => (
             <motion.div
@@ -213,7 +210,7 @@ const Home = () => {
     </section>
     
       {/* Donation Section */}
-      <section className="flex flex-col max-w-7xl mx-auto py-12 md:py-20 px-4 md:px-8">
+      <section className="flex flex-col md:flex-row max-w-7xl mx-auto py-12 md:py-20 px-4 md:px-8">
         {/* Left Side - Donation Content */}
         <div className="w-full md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left z-10">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
@@ -264,7 +261,7 @@ const Home = () => {
       <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 justify-center">
         {logos.map((logo, index) => (
           <div key={index} className="w-24 h-24 flex items-center justify-center bg-gray-100 rounded-full shadow-lg p-2">
-            <img src={logo} alt={`Logo ${index + 1}`} className="w-full h-full object-contain" />
+            <img src={logo} alt={`Logo ${index + 1}`} className="w-full h-full rounded-full object-contain" />
           </div>
         ))}
       </div>
