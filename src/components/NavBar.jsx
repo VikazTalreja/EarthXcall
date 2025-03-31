@@ -35,14 +35,14 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full ${isTransparent ? 'bg-transparent' : 'bg-black/40 backdrop-filter backdrop-blur-lg shadow-lg'} text-white z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 w-full ${isTransparent ? 'bg-transparent' : 'bg-black/40 backdrop-filter backdrop-blur-md shadow-lg'} text-white z-50 transition-all duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
         {/* Left Side - Logo */}
         <div className="flex items-center space-x-7">
-          <a href="/" className="text-2xl font-bold">CallXEarth</a>
-
+        <img src="/MainLogo.png"  className="h-12" />
+      
           {/* Desktop Menu */}
           <ul className="hidden md:flex gap-6 z-10">
             {menuItems.map((item, index) => (
