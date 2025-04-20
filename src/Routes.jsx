@@ -17,7 +17,7 @@ import ProductPage from "./pages/productPage";
 import OurTeam from "./pages/OurTeam";
 import Solutions from "./pages/Solutions";
 import Csr from "./pages/csr";
-import Donateland from "./pages/Donateland";
+import Donateland from "./pages/DonateLand";
 import Ambassador from "./pages/Ambassador"
 
 function AppRoutes() {

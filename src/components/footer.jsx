@@ -1,12 +1,13 @@
 import { useState } from "react";
 
+
 export default function Footer() {
   return (
-    <footer className="  py-12">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-12">
+    <footer className=" bg-black opacity-90 py-12">
+      <div className="max-w-7xl  mx-auto px-6 grid md:grid-cols-4 gap-12">
         {/* Logo & Tax Info */}
         <div>
-          <h2 className="text-2xl font-bold text-green-400">EARTHxcall</h2>
+         <img src="/MainLogo.png"  className="h-[20%]" />
           <p className="mt-2 text-gray-400 text-sm">TAX ID #46-4664562</p>
           <p className="mt-2 text-gray-400 text-sm">One Tree Planted is a 501(c)3 tax-exempt organization. Your donation is tax-deductible.</p>
           <div className="mt-4">
