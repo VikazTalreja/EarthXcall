@@ -19,6 +19,7 @@ import Solutions from "./pages/Solutions";
 import Csr from "./pages/csr";
 import Donateland from "./pages/DonateLand";
 import Ambassador from "./pages/Ambassador"
+import TreeMap from "./pages/treemap";
 
 function AppRoutes() {
   return (
@@ -43,6 +44,7 @@ function AppRoutes() {
           <Route path="/csr" element={<Csr />} />
           <Route path="/ambassador" element={<Ambassador />} />
           <Route path="/donate-land" element={<Donateland />} />
+          <Route path="/treemap" element={<TreeMap />} />
         </Route>
       </Routes>
     </Router>
