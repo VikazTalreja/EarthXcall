@@ -1,5 +1,6 @@
 import { useState } from "react";
-
+import { FinancialData, QuickLinks } from "../data/FooterData";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -7,7 +8,7 @@ export default function Footer() {
       <div className="max-w-7xl  mx-auto px-6 grid md:grid-cols-4 gap-12">
         {/* Logo & Tax Info */}
         <div>
-         <img src="/MainLogo.png"  className="h-[20%]" />
+          <img src="/MainLogo.png" className="h-[20%]" />
           <p className="mt-2 text-gray-400 text-sm">TAX ID #46-4664562</p>
           <p className="mt-2 text-gray-400 text-sm">One Tree Planted is a 501(c)3 tax-exempt organization. Your donation is tax-deductible.</p>
           <div className="mt-4">
@@ -19,8 +20,8 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-lg text-green-400 mb-3">Quick Links</h3>
           <ul className="text-gray-400 space-y-2">
-            {['Privacy Policy', 'Terms of Service', 'Refund Policy', 'Careers', 'Fundraising Disclosures'].map(link => (
-              <li key={link}><a href="#" className="hover:text-green-400 transition">{link}</a></li>
+            {QuickLinks.map((item) => (
+              <li key={item.id}><a href={item.link} className="hover:text-green-400 transition">{item.title}</a></li>
             ))}
           </ul>
         </div>
@@ -29,8 +30,8 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-lg text-green-400 mb-3">Financials</h3>
           <ul className="text-gray-400 space-y-2">
-            {['2023: Form 990 | Audit Report', '2022: Form 990 | Audit Report', '2021: Form 990 | Audit Report', '2020: Form 990', '2019: Form 990'].map(report => (
-              <li key={report}><a href="#" className="hover:text-green-400 transition">{report}</a></li>
+            {FinancialData.map((item) => (
+              <li key={item.id}><a href={item.link} className="hover:text-green-400 transition">{item.title}</a></li>
             ))}
           </ul>
         </div>

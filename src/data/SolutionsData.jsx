@@ -1,50 +1,50 @@
-import { Factory, Sprout, Sun, TreePine, Waves, Wind } from "lucide-react";
+import { Droplet, Handshake, Leaf, Sprout, Users, } from "lucide-react";
 
 export const solutions = [
     // Energy Transition Solutions
     {
-      title: "Solar Photovoltaic Power",
-      description: "Leading the renewable energy revolution with advanced solar PV technology that converts sunlight directly into electricity. Now the cheapest electricity source in many regions, solar PV added 179 TWh of new capacity in 2021, marking a 22% growth from 2020.",
+      title: "Reforestation & Plantation Drives",
+      description: "We focus on reviving degraded lands through large-scale tree plantation initiatives. By working with local communities and using smart technology, we aim to restore green cover and create lasting ecological balance.",
       image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?auto=format&fit=crop&q=80&w=1000",
-      category: "Energy Transition",
-      icon: <Sun className="h-6 w-6" />
-    },
-    {
-      title: "Onshore & Offshore Wind",
-      description: "Harnessing wind power through advanced turbine technology both on land and sea. Offshore wind is growing 13% annually and is projected to increase 15x by 2040, becoming a trillion-dollar industry while providing clean, renewable energy.",
-      image: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&q=80&w=1000",
-      category: "Energy Transition",
-      icon: <Wind className="h-6 w-6" />
-    },
-    // Nature Conservation Solutions
-    {
-      title: "Protected Lands & Biodiversity",
-      description: "Safeguarding critical ecosystems through government-recognized protected areas and Other Effective Conservation Measures (OECMs). These areas are vital for biodiversity preservation and long-term environmental conservation.",
-      image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=80&w=1000",
-      category: "Nature Conservation",
-      icon: <TreePine className="h-6 w-6" />
-    },
-    {
-      title: "Marine Protection",
-      description: "Establishing and managing Marine Protected Areas (MPAs) to conserve ocean biodiversity and ecosystems. Over 5,000 MPAs currently cover 0.8% of the ocean, helping safeguard marine life and maintain crucial marine carbon sinks.",
-      image: "https://images.unsplash.com/photo-1498623116890-37e912163d5d?auto=format&fit=crop&q=80&w=1000",
-      category: "Marine Conservation",
-      icon: <Waves className="h-6 w-6" />
-    },
-    // Regenerative Agriculture Solutions
-    {
-      title: "Regenerative Farming",
-      description: "Transforming food production through soil health restoration and sustainable practices. Our approach enhances soil fertility and carbon sequestration while supporting the transition to net-zero food systems globally.",
-      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=1000",
-      category: "Agriculture",
+      category: "Regenerative Agriculture",
       icon: <Sprout className="h-6 w-6" />
     },
     {
-      title: "Sustainable Agriculture Technology",
-      description: "Implementing AI-driven crop optimization and sustainable farming practices to maximize yields while minimizing environmental impact. Our solutions include precision farming, crop diversity, and advanced irrigation systems.",
+      title: "Smart & Sustainable Farming Solutions",
+      description: "Our smart agriculture programs help farmers adopt eco-friendly practices that improve yield and conserve resources. With AI tools and IoT-based systems, we bring innovation directly to the fields.",
+      image: "https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&q=80&w=1000",
+      category: "Regenerative Agriculture",
+      icon: <Sprout className="h-6 w-6" />
+    },
+    // Nature Conservation Solutions
+    {
+      title: "Women Empowerment & Skill Development",
+      description: "We empower rural women through training in modern farming, entrepreneurship, and financial literacy. These programs help women become self-reliant and contribute meaningfully to their communities.",
+      image: "https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&q=80&w=1000",
+      category: "Women’s Empowerment",
+      icon: <Users className="h-6 w-6" />
+    },
+    {
+      title: "Water Conservation & Management",
+      description: "We implement sustainable water solutions like rainwater harvesting, drip irrigation, and watershed revival. These efforts ensure water security for agriculture and improve long-term resource management.",
+      image: "https://images.unsplash.com/photo-1498623116890-37e912163d5d?auto=format&fit=crop&q=80&w=1000",
+      category: "Water Conservation",
+      icon: <Droplet className="h-6 w-6" />
+    },
+    // Regenerative Agriculture Solutions
+    {
+      title: "Carbon Credit & Sustainability Initiatives",
+      description: "Our reforestation and eco-farming projects are designed to reduce carbon footprints and generate certified carbon credits. We help turn local green efforts into global environmental impact.",
+      image: "https://images.unsplash.com/photo-1625246333195-78d9c38ad449?auto=format&fit=crop&q=80&w=1000",
+      category: "Environment Sustainability",
+      icon: <Leaf className="h-6 w-6" />
+    },
+    {
+      title: "Corporate Social Responsibility (CSR) Services",
+      description: "We partner with companies to design and execute impactful CSR projects aligned with ESG goals. From reforestation to women empowerment, our programs deliver measurable social and environmental value.",
       image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&q=80&w=1000",
-      category: "Agriculture",
-      icon: <Factory className="h-6 w-6" />
+      category: "Corporate Social Responsibility",
+      icon: <Handshake className="h-6 w-6" />
     }
   ];
   
