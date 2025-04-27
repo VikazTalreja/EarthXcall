@@ -30,7 +30,7 @@ export default function Solutions() {
             <div className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center mb-10 sm:mb-12 md:mb-16">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4 md:mb-6 tracking-tight bg-gradient-to-r from-green-700 to-green-500 text-transparent bg-clip-text">
+                        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold  mb-3 sm:mb-4 md:mb-6 tracking-tight bg-gradient-to-r from-green-700 to-green-500 text-transparent bg-clip-text">
                             The Science is Clear—We Can Solve the Climate and Biodiversity Crisis
                         </h2>
                         <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto mb-8 sm:mb-10 md:mb-12 leading-relaxed">
@@ -42,8 +42,8 @@ export default function Solutions() {
                                 <div className="bg-gradient-to-br from-green-100 to-green-50 w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-5 md:mb-6 group-hover:scale-110 transition-transform duration-300">
                                     <Sun className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-green-600" />
                                 </div>
-                                <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3 md:mb-4 text-green-700">Energy Transition</h3>
-                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Shift to 100% renewable energy for a cleaner, more sustainable future.</p>
+                                <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3 md:mb-4 text-green-700">Women Empowerment</h3>
+                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">We empower rural women with agricultural knowledge , entrepreneurship skills, & financial literacy to foster self-sufficiency.</p>
                             </div>
                             {/* Card 2 */}
                             <div className="group bg-gradient-to-br from-green-50 to-white p-5 sm:p-6 md:p-8 rounded-xl hover:scale-[1.02] transition-all duration-300 hover:shadow-xl border border-green-100 hover:border-green-300">
@@ -51,7 +51,7 @@ export default function Solutions() {
                                     <TreePine className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-green-600" />
                                 </div>
                                 <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3 md:mb-4 text-green-700">Nature Conservation</h3>
-                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Protect and restore Earth's lands and oceans through a Global Safety Net.</p>
+                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed"> Protecting and restoring ecosystems to preserve biodiversity and combat climate change.</p>
                             </div>
                             {/* Card 3 */}
                             <div className="group bg-gradient-to-br from-green-50 to-white p-5 sm:p-6 md:p-8 rounded-xl hover:scale-[1.02] transition-all duration-300 hover:shadow-xl border border-green-100 hover:border-green-300">
@@ -59,7 +59,7 @@ export default function Solutions() {
                                     <Sprout className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-green-600" />
                                 </div>
                                 <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-2 sm:mb-3 md:mb-4 text-green-700">Regenerative Agriculture</h3>
-                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Transform food systems while restoring soil health.</p>
+                                <p className="text-sm sm:text-base text-gray-600 leading-relaxed">Transforming food production by promoting sustainable farming practices and restoring soil health.</p>
                             </div>
                         </div>
                     </div>
@@ -119,7 +119,7 @@ export default function Solutions() {
                                 className="bg-white/10 backdrop-blur-sm px-4 sm:px-5 md:px-6 py-3 sm:py-3.5 md:py-4 rounded-lg text-white w-full sm:min-w-[300px] focus:outline-none focus:ring-2 focus:ring-white/50 focus:ring-offset-2 focus:ring-offset-green-600 placeholder-white/60"
                             />
                             <button 
-                                className="group w-full sm:w-auto bg-white text-green-600 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-lg font-semibold hover:bg-green-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
+                                className="group w-full sm:w-auto flex bg-white text-green-600 px-5 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-lg font-semibold hover:bg-green-50 transition-all duration-300 ease-in-out transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
                             >
                                 Subscribe
                                 <ArrowRight className="inline-block ml-2 h-5 w-5 transform group-hover:translate-x-1 transition-transform" />
