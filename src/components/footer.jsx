@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { FinancialData, QuickLinks } from "../data/FooterData";
+import { AgriBookData, FinancialData, QuickLinks } from "../data/FooterData";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -9,8 +9,10 @@ export default function Footer() {
         {/* Logo & Tax Info */}
         <div>
           <img src="/MainLogo.png" className="h-[20%]" />
-          <p className="mt-2 text-gray-400 text-sm">TAX ID #46-4664562</p>
-          <p className="mt-2 text-gray-400 text-sm">One Tree Planted is a 501(c)3 tax-exempt organization. Your donation is tax-deductible.</p>
+          {/* <p className="mt-2 text-gray-400 text-sm">TAX ID #46-4664562</p> */}
+          <p className="mt-2 text-gray-400 text-sm">
+Earthxway Foundation is a registered NGO under the Indian Trust Act, 1982, with 12A & 80G certifications, and holds FCRA and CSR-1 approvals.
+</p>
           <div className="mt-4">
             <img src="https://via.placeholder.com/100x50" alt="Eco Badge" className="rounded-lg" />
           </div>
@@ -34,13 +36,21 @@ export default function Footer() {
               <li key={item.id}><a href={item.link} className="hover:text-green-400 transition">{item.title}</a></li>
             ))}
           </ul>
+          <h3 className="font-semibold text-lg text-green-400 my-3">Agri Books</h3>
+          <ul className="text-gray-400 space-y-2">
+            {AgriBookData.map((item) => (
+              <li key={item.id}><a href={item.link} className="hover:text-green-400 transition">{item.title}</a></li>
+            ))}
+          </ul>
         </div>
 
         {/* Contact & Newsletter */}
         <div>
           <h3 className="font-semibold text-lg text-green-400 mb-3">Connect</h3>
-          <p className="text-gray-400">Call: <a href="tel:18004087850" className="hover:text-green-400 transition">1.800.408.7850</a></p>
-          <p className="text-gray-400">145 Pine Haven Shores Rd #100D, Shelburne, Vermont, 05482, US</p>
+          <p className="text-gray-400">Call: <a href="tel:919552738757 " className="hover:text-green-400 transition">+91 9552738757</a></p>
+          <p className="text-gray-400">Pune Office:  Sliver Spring Apartment, Baif Road Wagholi, Pune 412207 
+<br/><br/>Nagpur Office: Appa Swami Apartment, Chinchbhuan, Nagpur 440005
+</p>
 
           {/* Social Media Icons */}
           <div className="flex space-x-4 mt-3 text-green-400">

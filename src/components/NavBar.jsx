@@ -35,7 +35,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 w-full ${isTransparent ? 'bg-transparent' : 'bg-black/40 backdrop-filter backdrop-blur-md shadow-lg'} text-white z-50 transition-all duration-300 ${
+    <header className={`fixed top-0 left-0 w-full  bg-black/40 backdrop-filter backdrop-blur-md shadow-lg text-white z-50 transition-all duration-300 ${
       isVisible ? 'translate-y-0' : '-translate-y-full'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
