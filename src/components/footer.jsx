@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AgriBookData, FinancialData, QuickLinks } from "../data/FooterData";
 import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaTiktok, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -53,10 +54,18 @@ Earthxway Foundation is a registered NGO under the Indian Trust Act, 1982, with 
 </p>
 
           {/* Social Media Icons */}
-          <div className="flex space-x-4 mt-3 text-green-400">
-            {['facebook', 'instagram', 'linkedin', 'pinterest', 'tiktok', 'youtube'].map(icon => (
-              <a key={icon} href="#" className="hover:text-green-300 transition">
-                <i className={`fab fa-${icon}`} />
+          <div className="flex space-x-4 mt-3">
+            {[
+              { icon: FaFacebook, name: 'Facebook' , link: 'https://www.youtube.com/@earthxway' },
+              { icon: FaInstagram, name: 'Instagram' , link: 'https://www.instagram.com/earthxway' },
+              { icon: FaLinkedin, name: 'LinkedIn' , link: 'https://www.linkedin.com/company/earthxway/about/' },
+              { icon: FaYoutube, name: 'YouTube' , link: 'https://www.youtube.com/@earthxwayfoundation' },
+              // { icon: FaThreads, name: 'Threads' , link: 'https://www.threads.net/@earthxway' },
+              { icon: FaTwitter, name: 'Twitter' , link: 'https://x.com/@earthxway' },
+            ].map(({icon: Icon, name, link}) => (
+              <a key={name} href={link} className="text-green-600 hover:text-green-400 transition">
+                <Icon className="text-xl" />
+                <span className="sr-only">{name}</span>
               </a>
             ))}
           </div>

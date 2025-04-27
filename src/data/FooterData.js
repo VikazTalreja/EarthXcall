@@ -2,7 +2,7 @@ export const QuickLinks = [
     { id: 1, title: 'Privacy Policy', link: '/privacy-policy', },
     { id: 2, title: 'Terms of Service', link: '/terms-of-service', },
     { id: 3, title: 'Refund Policy', link: '/', },
-    { id: 4, title: 'Careers', link: '/', },
+    { id: 4, title: 'Careers', link: '/about/team', },
     { id: 5, title: 'Fundraising Disclosures', link: '/', },
     { id: 6, title: 'Contact Us', link: '/contact-us', }
 ]
