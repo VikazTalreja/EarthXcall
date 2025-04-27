@@ -25,6 +25,8 @@ import TermsOfService from "./pages/Terms";
 import ContactUsPage from "./pages/ContactUs";
 import PrivacyPolicyPage from "./pages/PrivacyPolicy";
 import NewsRoom from "./pages/NewsRoom";
+import TreeMap from "./pages/treemap";
+
 
 function AppRoutes() {
   return (
@@ -54,8 +56,8 @@ function AppRoutes() {
           <Route path="/news/stories-post/:id" element={<StoryBlog/>}/>
           <Route path="/terms-of-service" element={<TermsOfService/>}/>
           <Route path="/contact-us" element={<ContactUsPage/>}/>
-          <Route path="/privacy-policy" element={<PrivacyPolicyPage/>}/>
-         
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage/>}/>         
+          <Route path="/treemap" element={<TreeMap />} />
         </Route>
       </Routes>
     </Router>
