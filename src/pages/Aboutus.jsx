@@ -42,7 +42,7 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
             <div className="space-y-4 sm:space-y-5 md:space-y-6">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-700 tracking-tight bg-gradient-to-r from-green-700 to-green-500 text-transparent bg-clip-text">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-green-700 to-green-500 text-transparent bg-clip-text">
                 Our Mission
               </h2>
               <p className="text-base sm:text-lg text-gray-700 leading-relaxed">
@@ -119,7 +119,7 @@ const About = () => {
       {/* Our Impact Section */}
       <section className="py-10 sm:py-12 md:py-16 px-4 sm:px-6 bg-gradient-to-br from-green-50 to-white text-center">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-green-700 mb-4 sm:mb-6 md:mb-8 tracking-tight bg-gradient-to-r from-green-700 to-green-500 text-transparent bg-clip-text">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold  mb-4 sm:mb-6 md:mb-8 tracking-tight bg-gradient-to-r from-green-700 to-green-500 text-transparent bg-clip-text">
             Together, We're Creating Change
           </h2>
           <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-3 sm:mb-4">

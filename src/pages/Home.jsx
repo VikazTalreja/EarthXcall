@@ -34,16 +34,16 @@ const Home = () => {
 
   const cardData = [
     {
-      id: "energy-transition",
-      title: "Energy Transition",
+      id: "women-empowerment",
+      title: "Women Empowerment",
       img: "https://plus.unsplash.com/premium_photo-1679917152396-4b18accacb9d?q=80&w=2127&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      text: "Shifting from fossil fuels to 100% clean, renewable energy, ensuring a sustainable and just transition.",
+      text: "We empower rural women with agricultural knowledge, entrepreneurship skills, and financial literacy to foster self-sufficiency.",
     },
     {
       id: "nature-conservation",
       title: "Nature Conservation",
       img: "https://images.unsplash.com/photo-1573865174887-dd85bc60e3e5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      text: "Protecting and restoring ecosystems to preserve biodiversity and combat climate change.",
+      text: "Protecting and restoring ecosystems to preserve biodiversity and combat climate change.                             ",
     },
     {
       id: "regenerative-agriculture",

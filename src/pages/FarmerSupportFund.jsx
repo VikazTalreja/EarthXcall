@@ -2,25 +2,35 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 
 const FarmerSupportFund = () => {
-  const [currency, setCurrency] = useState({
-    symbol: '₹',
-    code: 'INR',
-    amounts: [5, 20, 50, 100]
+  const [currency] = useState({
+    symbol: '$',
+    code: 'USD',
+    amounts: [10, 20, 50, 100]
   });
+  const [selectedAmount, setSelectedAmount] = useState(10);
+  const [customAmount, setCustomAmount] = useState('');
+  const [donationType, setDonationType] = useState('oneTime');
 
-  const currencies = {
-    INR: { symbol: '₹', amounts: [5, 20, 50, 100] },
-    USD: { symbol: '$', amounts: [1, 5, 10, 20] },
-    EUR: { symbol: '€', amounts: [1, 5, 10, 20] }
+  // Handle amount selection
+  const handleAmountSelect = (amount) => {
+    setSelectedAmount(amount);
+    setCustomAmount('');
   };
 
-  const handleCurrencyChange = (e) => {
-    const selectedCurrency = e.target.value;
-    setCurrency({
-      symbol: currencies[selectedCurrency].symbol,
-      code: selectedCurrency,
-      amounts: currencies[selectedCurrency].amounts
-    });
+  // Handle custom amount input
+  const handleCustomAmountChange = (e) => {
+    setCustomAmount(e.target.value);
+    setSelectedAmount(null);
+  };
+
+  // Handle donation submission
+  const handleDonate = () => {
+    const donationAmount = customAmount || selectedAmount;
+    if (!donationAmount) {
+      alert('Please select or enter a donation amount');
+      return;
+    }
+    alert(`Thank you for your ${donationType === 'oneTime' ? 'one-time' : 'monthly'} donation of $${donationAmount}!`);
   };
 
   return (
@@ -49,10 +59,16 @@ const FarmerSupportFund = () => {
           </p>
 
           <div className="flex gap-3 mb-6">
-            <button className="flex-1 bg-[#98A4AE] hover:bg-[#7A8793] text-white font-bold py-3 px-4 rounded text-sm">
+            <button 
+              className={`flex-1 ${donationType === 'oneTime' ? 'bg-[#98A4AE]' : 'bg-white'} hover:bg-[#7A8793] text-${donationType === 'oneTime' ? 'white' : 'gray-700'} font-bold py-3 px-4 rounded text-sm ${donationType !== 'oneTime' ? 'border border-gray-300' : ''}`}
+              onClick={() => setDonationType('oneTime')}
+            >
               GIVE TODAY
             </button>
-            <button className="flex-1 bg-white hover:bg-gray-100 text-gray-700 font-bold py-3 px-4 rounded border border-gray-300 text-sm">
+            <button 
+              className={`flex-1 ${donationType === 'monthly' ? 'bg-[#98A4AE]' : 'bg-white'} hover:bg-[#7A8793] text-${donationType === 'monthly' ? 'white' : 'gray-700'} font-bold py-3 px-4 rounded text-sm ${donationType !== 'monthly' ? 'border border-gray-300' : ''}`}
+              onClick={() => setDonationType('monthly')}
+            >
               GIVE MONTHLY
             </button>
           </div>
@@ -60,50 +76,50 @@ const FarmerSupportFund = () => {
           <p className="text-xs uppercase tracking-wider text-gray-600 mb-4">SELECT AN AMOUNT TO DONATE:</p>
           <div className="grid grid-cols-3 gap-3 mb-4">
             {currency.amounts.slice(0, 3).map((amount, index) => (
-              <button key={index} className={`${index === 1 ? 'bg-[#98A4AE] hover:bg-[#7A8793] text-white' : 'bg-white hover:bg-gray-100 text-gray-700 border border-gray-300'} font-bold py-2 px-3 rounded text-sm`}>
+              <button 
+                key={index}
+                className={`${selectedAmount === amount ? 'bg-[#98A4AE] text-white' : 'bg-white text-gray-700 border border-gray-300'} hover:bg-[#7A8793] hover:text-white font-bold py-2 px-3 rounded text-sm`}
+                onClick={() => handleAmountSelect(amount)}
+              >
                 {currency.symbol}{amount}
               </button>
             ))}
           </div>
 
           <div className="grid grid-cols-2 gap-3 mb-6">
-            <button className="bg-white hover:bg-gray-100 text-gray-700 font-bold py-2 px-3 rounded border border-gray-300 text-sm">
+            <button 
+              className={`${selectedAmount === currency.amounts[3] ? 'bg-[#98A4AE] text-white' : 'bg-white text-gray-700 border border-gray-300'} hover:bg-[#7A8793] hover:text-white font-bold py-2 px-3 rounded text-sm`}
+              onClick={() => handleAmountSelect(currency.amounts[3])}
+            >
               {currency.symbol}{currency.amounts[3]}
             </button>
-            <button className="bg-white hover:bg-gray-100 text-gray-700 font-bold py-2 px-3 rounded border border-gray-300 text-sm">
+            <button 
+              className={`${customAmount && !selectedAmount ? 'bg-[#98A4AE] text-white' : 'bg-white text-gray-700 border border-gray-300'} hover:bg-[#7A8793] hover:text-white font-bold py-2 px-3 rounded text-sm`}
+              onClick={() => document.getElementById('customAmount').focus()}
+            >
               Other
             </button>
           </div>
 
           <div className="flex items-center mb-6 bg-white rounded border border-gray-300">
             <div className="flex-1 flex items-center px-3">
-              <span className="text-gray-700 text-sm mr-2">{currency.symbol}</span>
-              <input 
-                type="number" 
+              <span className="text-gray-700 text-sm mr-2">$</span>
+              <input
+                id="customAmount"
+                type="number"
                 className="w-full outline-none text-sm py-2"
-                placeholder="20"
+                placeholder="Enter amount"
+                value={customAmount}
+                onChange={handleCustomAmountChange}
+                min="1"
               />
             </div>
-            <div className="relative">
-              <select 
-                className="appearance-none bg-transparent border-l border-gray-300 py-2 px-3 pr-8 text-sm text-gray-700 cursor-pointer hover:bg-gray-50 focus:outline-none"
-                value={currency.code}
-                onChange={handleCurrencyChange}
-              >
-                <option>INR</option>
-                <option>USD</option>
-                <option>EUR</option>
-              </select>
-              <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                  <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"/>
-                </svg>
-              </div>
-            </div>
           </div>
-
-          <button className="w-full bg-[#1B3044] hover:bg-[#0D1821] text-white font-bold py-3 px-4 rounded text-sm uppercase">
-            DONATE
+          <button
+            className="w-full bg-[#1B3044] hover:bg-[#0D1821] text-white font-bold py-3 px-4 rounded text-sm uppercase"
+            onClick={handleDonate}
+          >
+            {donationType === 'oneTime' ? 'DONATE NOW' : 'DONATE MONTHLY'}
           </button>
         </div>
       </header>
@@ -121,15 +137,15 @@ const FarmerSupportFund = () => {
                 We provide financial resources, technical training, and market access to help farmers transition to regenerative farming methods that restore soil health, increase biodiversity, and sequester carbon while improving their livelihoods.
               </p>
             </div>
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="rounded-lg overflow-hidden shadow-xl"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070&auto=format&fit=crop&fm=webp" 
-                alt="Sustainable farming" 
+              <img
+                src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?q=80&w=2070&auto=format&fit=crop&fm=webp"
+                alt="Sustainable farming"
                 className="w-full h-auto"
                 loading="lazy"
                 decoding="async"
@@ -143,9 +159,8 @@ const FarmerSupportFund = () => {
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700">How It Works</h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.1 }}
@@ -157,8 +172,7 @@ const FarmerSupportFund = () => {
                 We identify and partner with small-scale farmers who are committed to sustainable practices and have the potential for significant environmental impact.
               </p>
             </motion.div>
-            
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
@@ -170,8 +184,7 @@ const FarmerSupportFund = () => {
                 We provide financial support, seeds, tools, and training to help farmers implement agroforestry systems and regenerative practices.
               </p>
             </motion.div>
-            
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -191,17 +204,16 @@ const FarmerSupportFund = () => {
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center text-green-700">Impact Stories</h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?q=80&w=2070&auto=format&fit=crop&fm=webp" 
-                alt="Farmer in Kenya" 
+              <img
+                src="https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?q=80&w=2070&auto=format&fit=crop&fm=webp"
+                alt="Farmer in Kenya"
                 className="w-full h-64 object-cover"
                 loading="lazy"
                 decoding="async"
@@ -214,16 +226,15 @@ const FarmerSupportFund = () => {
                 <p className="text-gray-600 italic">- Maria Njeri, Small-scale Farmer</p>
               </div>
             </motion.div>
-            
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5 }}
               className="bg-white rounded-lg shadow-lg overflow-hidden"
             >
-              <img 
-                src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop&fm=webp" 
-                alt="Farmer in Colombia" 
+              <img
+                src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop&fm=webp"
+                alt="Farmer in Colombia"
                 className="w-full h-64 object-cover"
                 loading="lazy"
                 decoding="async"
@@ -244,9 +255,8 @@ const FarmerSupportFund = () => {
       <section className="py-16 px-4 bg-green-50">
         <div className="max-w-6xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-12 text-green-700">Ways to Support</h2>
-          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            <motion.div 
+            <motion.div
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
               className="bg-white p-8 rounded-lg shadow-lg"
@@ -259,8 +269,7 @@ const FarmerSupportFund = () => {
                 Donate
               </button>
             </motion.div>
-            
-            <motion.div 
+            <motion.div
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
               className="bg-white p-8 rounded-lg shadow-lg"
@@ -273,8 +282,7 @@ const FarmerSupportFund = () => {
                 Subscribe
               </button>
             </motion.div>
-            
-            <motion.div 
+            <motion.div
               whileHover={{ y: -10 }}
               transition={{ duration: 0.3 }}
               className="bg-white p-8 rounded-lg shadow-lg"

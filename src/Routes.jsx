@@ -19,6 +19,14 @@ import Solutions from "./pages/Solutions";
 import Csr from "./pages/csr";
 import Donateland from "./pages/DonateLand";
 import Ambassador from "./pages/Ambassador"
+import EarthStories from "./pages/EarthStories";
+import StoryBlog from "./pages/DetailedBlog";
+import TermsOfService from "./pages/Terms";
+import ContactUsPage from "./pages/ContactUs";
+import PrivacyPolicyPage from "./pages/PrivacyPolicy";
+import NewsRoom from "./pages/NewsRoom";
+import TreeMap from "./pages/treemap";
+
 
 function AppRoutes() {
   return (
@@ -43,6 +51,13 @@ function AppRoutes() {
           <Route path="/csr" element={<Csr />} />
           <Route path="/ambassador" element={<Ambassador />} />
           <Route path="/donate-land" element={<Donateland />} />
+          <Route path="/news/newsroom" element={<NewsRoom/>}/>
+          <Route path="/news/stories" element={<EarthStories/>}/>
+          <Route path="/news/stories-post/:id" element={<StoryBlog/>}/>
+          <Route path="/terms-of-service" element={<TermsOfService/>}/>
+          <Route path="/contact-us" element={<ContactUsPage/>}/>
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage/>}/>         
+          <Route path="/treemap" element={<TreeMap />} />
         </Route>
       </Routes>
     </Router>

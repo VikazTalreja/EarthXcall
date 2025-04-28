@@ -1,5 +1,7 @@
 import { useState } from "react";
-
+import { AgriBookData, FinancialData, QuickLinks } from "../data/FooterData";
+import { Link } from "react-router-dom";
+import { FaFacebook, FaInstagram, FaLinkedin, FaPinterest, FaTiktok, FaTwitter, FaYoutube } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -7,9 +9,11 @@ export default function Footer() {
       <div className="max-w-7xl  mx-auto px-6 grid md:grid-cols-4 gap-12">
         {/* Logo & Tax Info */}
         <div>
-         <img src="/MainLogo.png"  className="h-[20%]" />
-          <p className="mt-2 text-gray-400 text-sm">TAX ID #46-4664562</p>
-          <p className="mt-2 text-gray-400 text-sm">One Tree Planted is a 501(c)3 tax-exempt organization. Your donation is tax-deductible.</p>
+          <img src="/MainLogo.png" className="h-[20%]" />
+          {/* <p className="mt-2 text-gray-400 text-sm">TAX ID #46-4664562</p> */}
+          <p className="mt-2 text-gray-400 text-sm">
+Earthxway Foundation is a registered NGO under the Indian Trust Act, 1982, with 12A & 80G certifications, and holds FCRA and CSR-1 approvals.
+</p>
           <div className="mt-4">
             <img src="https://via.placeholder.com/100x50" alt="Eco Badge" className="rounded-lg" />
           </div>
@@ -19,8 +23,8 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-lg text-green-400 mb-3">Quick Links</h3>
           <ul className="text-gray-400 space-y-2">
-            {['Privacy Policy', 'Terms of Service', 'Refund Policy', 'Careers', 'Fundraising Disclosures'].map(link => (
-              <li key={link}><a href="#" className="hover:text-green-400 transition">{link}</a></li>
+            {QuickLinks.map((item) => (
+              <li key={item.id}><a href={item.link} className="hover:text-green-400 transition">{item.title}</a></li>
             ))}
           </ul>
         </div>
@@ -29,8 +33,14 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-lg text-green-400 mb-3">Financials</h3>
           <ul className="text-gray-400 space-y-2">
-            {['2023: Form 990 | Audit Report', '2022: Form 990 | Audit Report', '2021: Form 990 | Audit Report', '2020: Form 990', '2019: Form 990'].map(report => (
-              <li key={report}><a href="#" className="hover:text-green-400 transition">{report}</a></li>
+            {FinancialData.map((item) => (
+              <li key={item.id}><a href={item.link} className="hover:text-green-400 transition">{item.title}</a></li>
+            ))}
+          </ul>
+          <h3 className="font-semibold text-lg text-green-400 my-3">Agri Books</h3>
+          <ul className="text-gray-400 space-y-2">
+            {AgriBookData.map((item) => (
+              <li key={item.id}><a href={item.link} className="hover:text-green-400 transition">{item.title}</a></li>
             ))}
           </ul>
         </div>
@@ -38,14 +48,24 @@ export default function Footer() {
         {/* Contact & Newsletter */}
         <div>
           <h3 className="font-semibold text-lg text-green-400 mb-3">Connect</h3>
-          <p className="text-gray-400">Call: <a href="tel:18004087850" className="hover:text-green-400 transition">1.800.408.7850</a></p>
-          <p className="text-gray-400">145 Pine Haven Shores Rd #100D, Shelburne, Vermont, 05482, US</p>
+          <p className="text-gray-400">Call: <a href="tel:919552738757 " className="hover:text-green-400 transition">+91 9552738757</a></p>
+          <p className="text-gray-400">Pune Office:  Sliver Spring Apartment, Baif Road Wagholi, Pune 412207 
+<br/><br/>Nagpur Office: Appa Swami Apartment, Chinchbhuan, Nagpur 440005
+</p>
 
           {/* Social Media Icons */}
-          <div className="flex space-x-4 mt-3 text-green-400">
-            {['facebook', 'instagram', 'linkedin', 'pinterest', 'tiktok', 'youtube'].map(icon => (
-              <a key={icon} href="#" className="hover:text-green-300 transition">
-                <i className={`fab fa-${icon}`} />
+          <div className="flex space-x-4 mt-3">
+            {[
+              { icon: FaFacebook, name: 'Facebook' , link: 'https://www.youtube.com/@earthxway' },
+              { icon: FaInstagram, name: 'Instagram' , link: 'https://www.instagram.com/earthxway' },
+              { icon: FaLinkedin, name: 'LinkedIn' , link: 'https://www.linkedin.com/company/earthxway/about/' },
+              { icon: FaYoutube, name: 'YouTube' , link: 'https://www.youtube.com/@earthxwayfoundation' },
+              // { icon: FaThreads, name: 'Threads' , link: 'https://www.threads.net/@earthxway' },
+              { icon: FaTwitter, name: 'Twitter' , link: 'https://x.com/@earthxway' },
+            ].map(({icon: Icon, name, link}) => (
+              <a key={name} href={link} className="text-green-600 hover:text-green-400 transition">
+                <Icon className="text-xl" />
+                <span className="sr-only">{name}</span>
               </a>
             ))}
           </div>
