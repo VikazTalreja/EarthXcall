@@ -14,9 +14,9 @@ export default function Footer() {
           <p className="mt-2 text-gray-400 text-sm">
 Earthxway Foundation is a registered NGO under the Indian Trust Act, 1982, with 12A & 80G certifications, and holds FCRA and CSR-1 approvals.
 </p>
-          <div className="mt-4">
+          {/* <div className="mt-4">
             <img src="https://via.placeholder.com/100x50" alt="Eco Badge" className="rounded-lg" />
-          </div>
+          </div> */}
         </div>
 
         {/* Quick Links */}

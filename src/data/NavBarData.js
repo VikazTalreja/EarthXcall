@@ -48,7 +48,7 @@ export const menuItems = [
     link: "",
     subMenu: [
       { name: "Gift Trees", link: "/gifting/gift-trees" },
-      { name: "Our Shop", link: "/productpage" }
+      // { name: "Our Shop", link: "/productpage" }
     ]
   },
   { 
