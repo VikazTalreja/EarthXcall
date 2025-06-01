@@ -1,11 +1,151 @@
 import backgroundImage from "../assets/HomeBg.jpg";
-import { useState, useEffect , useId, useRef } from "react";
+import { useState, useEffect, useId, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import L from "leaflet";
+import planticon from "../assets/plant.png";
+
+// Tree icon
+const treeIcon = new L.Icon({
+  iconUrl: planticon,
+  iconSize: [32, 32],
+  iconAnchor: [16, 32],
+  popupAnchor: [0, -32],
+});
+
+// Sample tree data (replace with real coordinates & data)
+const treeLocations = [
+  {
+    id: 1,
+    type: "company",
+    companyName: "Xenosis IT Solutions Pvt. Ltd.",
+    date: "15/08/2020",
+    numberOfPlants: 50,
+    species: ["Banyan", "Neem", "Mango"],
+    city: "Nagpur",
+    coords: [18.5204, 73.8567],
+    logo: "https://www.shutterstock.com/image-vector/circle-line-simple-design-logo-600nw-2174926871.jpg",
+  },
+  {
+    id: 2,
+    type: "company",
+    companyName: "Cogitix Tech Solution Pvt. Ltd.",
+    date: "20/08/2024",
+    numberOfPlants: 50,
+    species: ["Banyan", "Peepal", "Mango"],
+    city: "Nagpur",
+    coords: [18.5204, 73.8567],
+    logo: "cogitixlogo",
+  },
+  {
+    id: 3,
+    type: "individual",
+    name: "Rahul Sharma",
+    date: "20/05/2021",
+    numberOfPlants: 5,
+    species: ["Peepal", "Neem"],
+    city: "Pune",
+    coords: [21.1458, 79.0882],
+  },
+  {
+    id: 4,
+    type: "company",
+    companyName: "Green Earth Corp.",
+    date: "10/10/2023",
+    numberOfPlants: 100,
+    species: ["Bamboo", "Teak", "Gulmohar"],
+    city: "Mumbai",
+    coords: [19.076, 72.8777],
+    logo: "/greenearth.png",
+  },
+  {
+    id: 5,
+    type: "individual",
+    name: "Sneha Deshmukh",
+    date: "05/06/2022",
+    numberOfPlants: 10,
+    species: ["Neem", "Banyan"],
+    city: "Aurangabad",
+    coords: [19.8762, 75.3433],
+  },
+  {
+    id: 6,
+    type: "company",
+    companyName: "EcoRoots Pvt. Ltd.",
+    date: "12/12/2021",
+    numberOfPlants: 75,
+    species: ["Peepal", "Ashoka", "Mango"],
+    city: "Hyderabad",
+    coords: [17.385, 78.4867],
+    logo: "/ecorootslogo.png",
+  },
+  {
+    id: 7,
+    type: "individual",
+    name: "Amit Verma",
+    date: "18/04/2023",
+    numberOfPlants: 3,
+    species: ["Mango"],
+    city: "Nashik",
+    coords: [20.0059, 73.788],
+  },
+  {
+    id: 8,
+    type: "company",
+    companyName: "BioTech Planet",
+    date: "01/01/2020",
+    numberOfPlants: 30,
+    species: ["Neem", "Bamboo"],
+    city: "Bangalore",
+    coords: [12.9716, 77.5946],
+    logo: "/biotechlogo.png",
+  },
+  {
+    id: 9,
+    type: "individual",
+    name: "Kiran More",
+    date: "22/03/2022",
+    numberOfPlants: 7,
+    species: ["Ashoka", "Gulmohar"],
+    city: "Nagpur",
+    coords: [18.5204, 73.8567],
+  },
+  {
+    id: 10,
+    type: "company",
+    companyName: "Planet Savers Inc.",
+    date: "09/11/2023",
+    numberOfPlants: 120,
+    species: ["Banyan", "Peepal", "Ashoka"],
+    city: "Chennai",
+    coords: [13.0827, 80.2707],
+    logo: "/planetsavers.png",
+  },
+  {
+    id: 11,
+    type: "individual",
+    name: "Priya Nair",
+    date: "14/07/2021",
+    numberOfPlants: 8,
+    species: ["Neem", "Bamboo"],
+    city: "Kochi",
+    coords: [9.9312, 76.2673],
+  },
+  {
+    id: 12,
+    type: "company",
+    companyName: "TreeTech India",
+    date: "25/12/2022",
+    numberOfPlants: 90,
+    species: ["Teak", "Mango"],
+    city: "Indore",
+    coords: [22.7196, 75.8577],
+    logo: "/treetechlogo.png",
+  },
+];
 
 const Home = () => {
-
-
   const router = useNavigate();
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
@@ -14,23 +154,33 @@ const Home = () => {
     }
   };
 
-
   const slides = [
-    { src: "https://picsum.photos/800/600?random=1", title: "Explore Solutions", button: "Learn More" },
-    { src: "https://picsum.photos/800/600?random=2", title: "Donate", button: "Explore" },
-    { src: "https://picsum.photos/800/600?random=3", title: "Slide Three", button: "Join Now" },
+    {
+      src: "https://picsum.photos/800/600?random=1",
+      title: "Explore Solutions",
+      button: "Learn More",
+    },
+    {
+      src: "https://picsum.photos/800/600?random=2",
+      title: "Donate",
+      button: "Explore",
+    },
+    {
+      src: "https://picsum.photos/800/600?random=3",
+      title: "Slide Three",
+      button: "Join Now",
+    },
   ];
 
-
-  const Socialgallery =[
+  const Socialgallery = [
     "https://plus.unsplash.com/premium_photo-1679541668187-ee5d14a2a15c?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
 
     "https://images.unsplash.com/photo-1569880153113-76e33fc52d5f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://plus.unsplash.com/premium_photo-1678344177250-bfdbed89fc03?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1620901433789-1d2f85a93653?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dt",
-  "https://images.unsplash.com/photo-1545830790-68595959c491?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1610093674388-cee0337f2684?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  ]
+    "https://plus.unsplash.com/premium_photo-1678344177250-bfdbed89fc03?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1620901433789-1d2f85a93653?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3Dt",
+    "https://images.unsplash.com/photo-1545830790-68595959c491?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1610093674388-cee0337f2684?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ];
 
   const cardData = [
     {
@@ -53,22 +203,31 @@ const Home = () => {
     },
   ];
 
+  const logos = ["/PartnerLogo1.png", "/PartnerLogo2.png", "/PartnerLogo3.png"];
+  const [search, setSearch] = useState("");
 
-  const logos = [
-    "/PartnerLogo1.png",
-    "/PartnerLogo2.png",
-    "/PartnerLogo3.png"
-  ];
+  const filteredLocations = treeLocations.filter((item) => {
+    const keyword = search.toLowerCase();
+
+    return (
+      (item.companyName && item.companyName.toLowerCase().includes(keyword)) ||
+      (item.name && item.name.toLowerCase().includes(keyword)) ||
+      (item.city && item.city.toLowerCase().includes(keyword)) ||
+      item.species.some((specie) => specie.toLowerCase().includes(keyword))
+    );
+  });
 
   return (
-
     <>
       {/* Hero Section */}
-      <section style={{ 
+      <section
+        style={{
           backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1625246333195-78d9c38ad449?q=80&w=2070&auto=format&fit=crop')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }} className="relative flex flex-col h-screen justify-center bg-[#E8F1F2] py-10 md:py-20 px-4 md:px-6 text-center">
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+        className="relative flex flex-col h-screen justify-center bg-[#E8F1F2] py-10 md:py-20 px-4 md:px-6 text-center"
+      >
         <div className="max-w-7xl mx-auto flex flex-col items-center justify-center text-center gap-8 md:gap-12">
           <div className="flex flex-col justify-center items-center max-w-2xl px-4">
             <h1 className="text-2xl md:text-4xl font-bold text-white leading-tight md:leading-snug">
@@ -79,12 +238,18 @@ const Home = () => {
               A roadmap for sustainability, backed by groundbreaking research
               and real-world solutions.
             </p>
-            <button className="mt-4 md:mt-6 px-4 md:px-6 py-2 md:py-3 w-full md:w-48 bg-[#008A7D] text-white font-semibold rounded-lg hover:bg-[#006F65] cursor-pointer transition" onClick={()=>{router("/about/solutions")}}>
+            <button
+              className="mt-4 md:mt-6 px-4 md:px-6 py-2 md:py-3 w-full md:w-48 bg-[#008A7D] text-white font-semibold rounded-lg hover:bg-[#006F65] cursor-pointer transition"
+              onClick={() => {
+                router("/about/solutions");
+              }}
+            >
               Explore Solutions
             </button>
           </div>
         </div>
       </section>
+
 
       {/* Cards Section */}
       <section className="bg-[#F4F7F7] py-12 md:py-16 px-4 md:px-6 text-center">
@@ -106,7 +271,9 @@ const Home = () => {
                 <h3 className="font-semibold text-lg md:text-xl text-[#008A7D] mt-3 md:mt-4">
                   {card.title}
                 </h3>
-                <p className="text-[#555D5A] text-sm md:text-base mt-2">{card.text}</p>
+                <p className="text-[#555D5A] text-sm md:text-base mt-2">
+                  {card.text}
+                </p>
                 <button
                   className="mt-3 md:mt-4 text-[#008A7D] cursor-pointer hover:bg-teal-800 transition-all duration-300 ease-in-out font-bold text-base md:text-lg border-2 p-2 md:p-3 rounded-lg hover:underline w-full"
                   onClick={() => scrollToSection(card.id)}
@@ -122,10 +289,10 @@ const Home = () => {
       {/* Stats Section */}
       <section className="bg-gray-200 py-16 text-center">
         <div className="w-full max-w-7xl mx-auto">
-        <h2 className="text-3xl font-semibold text-[#222C2A]">
-          Our Impact in Numbers
-        </h2>
-        <ImpactNumbers />
+          <h2 className="text-3xl font-semibold text-[#222C2A]">
+            Our Impact in Numbers
+          </h2>
+          <ImpactNumbers />
         </div>
       </section>
 
@@ -134,8 +301,8 @@ const Home = () => {
         className="relative min-h-screen bg-cover bg-center flex items-center justify-center text-white text-center px-4 md:px-6 py-16 md:py-0"
         style={{
           backgroundImage: `url('https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=1991&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
         }}
       >
         <div className="w-full">
@@ -181,45 +348,49 @@ const Home = () => {
 
       {/* Social gallery */}
       <section className="py-16 px-6 bg-gray-100 text-center">
-      <h2 className="text-3xl font-bold text-gray-800 mb-8">Social Gallery</h2>
+        <h2 className="text-3xl font-bold text-gray-800 mb-8">
+          Social Gallery
+        </h2>
 
-      {/* Container Restricting the height */}
-      <div className="max-w-5xl mx-auto overflow-hidden">
-        <div
-          className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]"
-          style={{ maxHeight: "800px", height: "70vh" }} // Restrict height
-        >
-          {Socialgallery.map((src, index) => (
-            <motion.div
-              key={index}
-              className={`overflow-hidden rounded-lg shadow-lg relative group ${
-                index % 3 === 0 ? "md:col-span-1 md:row-span-1" : ""
-              }`}
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img
-                src={src}
-                alt="Gallery Image"
-                className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-              />
-            </motion.div>
-          ))}
+        {/* Container Restricting the height */}
+        <div className="max-w-5xl mx-auto overflow-hidden">
+          <div
+            className="grid grid-cols-2 md:grid-cols-3 gap-4 auto-rows-[200px] md:auto-rows-[250px]"
+            style={{ maxHeight: "800px", height: "70vh" }} // Restrict height
+          >
+            {Socialgallery.map((src, index) => (
+              <motion.div
+                key={index}
+                className={`overflow-hidden rounded-lg shadow-lg relative group ${
+                  index % 3 === 0 ? "md:col-span-1 md:row-span-1" : ""
+                }`}
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <img
+                  src={src}
+                  alt="Gallery Image"
+                  className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                />
+              </motion.div>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-    
+      </section>
+
       {/* Donation Section */}
       <section className="flex flex-col md:flex-row max-w-7xl mx-auto py-12 md:py-20 px-4 md:px-8">
         {/* Left Side - Donation Content */}
         <div className="w-full md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left z-10">
           <h2 className="text-2xl md:text-4xl font-bold text-gray-900 leading-tight">
-            Support Our Cause for a <span className="text-green-600">Sustainable Future</span>
+            Support Our Cause for a{" "}
+            <span className="text-green-600">Sustainable Future</span>
           </h2>
           <p className="text-gray-600 text-base md:text-lg">
-            Your contribution helps drive impactful projects. Choose a donation amount and help make a difference today.
+            Your contribution helps drive impactful projects. Choose a donation
+            amount and help make a difference today.
           </p>
-          
+
           {/* Donation Dropdown + Donate Button */}
           <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-3">
             {/* Donation Amount Dropdown */}
@@ -230,7 +401,7 @@ const Home = () => {
               <option value="5000">₹5000</option>
               <option value="custom">Custom Amount</option>
             </select>
-            
+
             {/* Donate Now Button */}
             <button className="w-full md:w-auto px-4 md:px-6 py-2 md:py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition text-base">
               Donate Now
@@ -245,27 +416,126 @@ const Home = () => {
       </section>
 
 
-      {/* Projects & Logo Cloud */}
-      <section className="py-16 px-6 grid md:grid-cols-2 gap-12 items-center text-center md:text-left">
-      {/* Text Section */}
-      <div className="space-y-4">
-        <h2 className="text-4xl font-bold text-[#222C2A] leading-tight">
-          Our Global Partners
-        </h2>
-        <p className="text-lg text-[#555D5A]">
-          We are making an impact across various regions with innovative solutions.
-        </p>
-      </div>
+         <section className="bg-[#E8F1F2] py-12 px-4 md:px-6">
+        <div className="max-w-7xl mx-auto text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold text-[#222C2A] mb-2">
+            Tree Plantation Map
+          </h2>
+          <p className="text-gray-700 mb-6">
+            Explore locations where individuals and organizations have
+            contributed to our green initiative.
+          </p>
 
-      {/* Logo Grid */}
-      <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 justify-center">
-        {logos.map((logo, index) => (
-          <div key={index} className="w-24 h-24 flex items-center justify-center bg-gray-100 rounded-full shadow-lg p-2">
-            <img src={logo} alt={`Logo ${index + 1}`} className="w-full h-full rounded-full object-contain" />
+          {/* Search Bar */}
+          <div className="relative max-w-md mx-auto mb-8">
+            <input
+              type="text"
+              placeholder="Search by name, company, city, or species..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#008A7D] transition"
+            />
+            {search && (
+              <button
+                onClick={() => setSearch("")}
+                className="absolute right-3 top-2 text-gray-400 hover:text-gray-600"
+              >
+                ✕
+              </button>
+            )}
           </div>
-        ))}
-      </div>
-    </section>
+
+          {/* Map */}
+          <div className="w-full h-[500px] rounded-xl overflow-hidden shadow-lg">
+            <MapContainer
+              center={[19.7515, 75.7139]}
+              zoom={6}
+              scrollWheelZoom={true}
+              style={{ height: "100%", width: "100%" }}
+            >
+              <TileLayer
+                attribution='&copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors'
+                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+              />
+              {filteredLocations.map((item) => (
+                <Marker key={item.id} position={item.coords} icon={treeIcon}>
+                  <Popup>
+                    {item.type === "company" ? (
+                      <>
+                        {/* Logo & Heading */}
+                        <img
+                          src="/PartnerLogo1.png"
+                          alt="Company Logo"
+                          className="w-15 h-15 mx-auto mb-4"
+                        />
+                        <strong>Company Name:</strong> {item.companyName}
+                        <br />
+                        <strong>Date:</strong> {item.date}
+                        <br />
+                        <strong>Plants:</strong> {item.numberOfPlants}
+                        <br />
+                        <strong>Species:</strong> {item.species.join(", ")}
+                        <br />
+                        <strong>City:</strong> {item.city}
+                        <br />
+                        <strong>Latitude:</strong> {item.coords[0]}
+                        <br />
+                        <strong>Longitude:</strong> {item.coords[1]}
+                      </>
+                    ) : (
+                      <>
+                        <strong>Name:</strong> {item.name}
+                        <br />
+                        <strong>Date:</strong> {item.date}
+                        <br />
+                        <strong>Plants:</strong> {item.numberOfPlants}
+                        <br />
+                        <strong>Species:</strong> {item.species.join(", ")}
+                        <br />
+                        <strong>City:</strong> {item.city}
+                        <br />
+                        <strong>Latitude:</strong> {item.coords[0]}
+                        <br />
+                        <strong>Longitude:</strong> {item.coords[1]}
+                      </>
+                    )}
+                  </Popup>
+                </Marker>
+              ))}
+            </MapContainer>
+          </div>
+        </div>
+      </section>
+
+      {/* Projects & Logo Cloud */}
+      <section className="py-16 px-18 grid md:grid-cols-2 gap-12 items-center text-center md:text-left">
+        {/* Text Section */}
+        <div className="space-y-4">
+          <h2 className="text-4xl font-bold text-[#222C2A] leading-tight">
+            Our Global Partners
+          </h2>
+          <p className="text-lg text-[#555D5A]">
+            We are making an impact across various regions with innovative
+            solutions.
+          </p>
+        </div>
+
+        {/* Logo Grid */}
+        <div className="grid grid-cols-3 sm:grid-cols-4 gap-6 justify-center">
+          {logos.map((logo, index) => (
+            <div
+              key={index}
+              className="w-24 h-24 flex items-center justify-center bg-gray-100 rounded-full shadow-lg p-2"
+            >
+              <img
+                src={logo}
+                alt={`Logo ${index + 1}`}
+                className="w-full h-full rounded-full object-contain"
+              />
+            </div>
+          ))}
+        </div>
+      </section>
     </>
   );
 };
@@ -329,7 +599,6 @@ const StatCard = ({ label, value, suffix }) => {
   );
 };
 
-
 const Slide = ({ slide, index, current, handleSlideClick }) => {
   const slideRef = useRef(null);
   const xRef = useRef(0);
@@ -371,35 +640,54 @@ const Slide = ({ slide, index, current, handleSlideClick }) => {
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
         style={{
-          transform: current !== index ? "scale(0.98) rotateX(8deg) " : "scale(1) rotateX(0deg)",
+          transform:
+            current !== index
+              ? "scale(0.98) rotateX(8deg) "
+              : "scale(1) rotateX(0deg)",
           transition: "transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
           transformOrigin: "bottom",
-        }}>
+        }}
+      >
         <div
           className="absolute top-0 left-0 w-full h-full  rounded-[1%] overflow-hidden transition-all duration-150 ease-out"
-          style={{ transform: current === index ? "translate3d(calc(var(--x) / 30), calc(var(--y) / 30), 0)" : "none" }}>
+          style={{
+            transform:
+              current === index
+                ? "translate3d(calc(var(--x) / 30), calc(var(--y) / 30), 0)"
+                : "none",
+          }}
+        >
           <img
             className="absolute inset-0 w-[120%] h-[120%] object-cover opacity-100 transition-opacity duration-600 ease-in-out"
             style={{ opacity: current === index ? 1 : 0 }}
             alt={title}
             src={src}
             loading="eager"
-            decoding="sync" />
-          {current === index && <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />}
+            decoding="sync"
+          />
+          {current === index && (
+            <div className="absolute inset-0 bg-black/30 transition-all duration-1000" />
+          )}
         </div>
 
-        <article className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${current === index ? "opacity-100 visible" : "opacity-0 invisible"}`}>
-          <h2 className="text-lg md:text-2xl lg:text-4xl font-semibold relative">{title}</h2>
+        <article
+          className={`relative p-[4vmin] transition-opacity duration-1000 ease-in-out ${
+            current === index ? "opacity-100 visible" : "opacity-0 invisible"
+          }`}
+        >
+          <h2 className="text-lg md:text-2xl lg:text-4xl font-semibold relative">
+            {title}
+          </h2>
           <div className="flex justify-center">
-            <button className="mt-6 px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-white h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">{button}</button>
+            <button className="mt-6 px-4 py-2 w-fit mx-auto sm:text-sm text-black bg-white h-12 border border-transparent text-xs flex justify-center items-center rounded-2xl hover:shadow-lg transition duration-200 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+              {button}
+            </button>
           </div>
         </article>
       </li>
-      
     </div>
   );
 };
-
 
 const Carousel = ({ slides = [] }) => {
   if (!Array.isArray(slides) || slides.length === 0) {
@@ -407,7 +695,8 @@ const Carousel = ({ slides = [] }) => {
   }
 
   const [current, setCurrent] = useState(0);
-  const handlePreviousClick = () => setCurrent((current - 1 + slides.length) % slides.length);
+  const handlePreviousClick = () =>
+    setCurrent((current - 1 + slides.length) % slides.length);
   const handleNextClick = () => setCurrent((current + 1) % slides.length);
   const handleSlideClick = (index) => current !== index && setCurrent(index);
   const id = useId();
@@ -421,13 +710,26 @@ const Carousel = ({ slides = [] }) => {
   }, [slides.length]);
 
   return (
-    <div className="relative w-[70vmin] h-[70vmin] mx-auto" aria-labelledby={`carousel-heading-${id}`}>
-      <ul className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out" style={{ transform: `translateX(-${current * (100 / slides.length)}%)` }}>
+    <div
+      className="relative w-[70vmin] h-[70vmin] mx-auto"
+      aria-labelledby={`carousel-heading-${id}`}
+    >
+      <ul
+        className="absolute flex mx-[-4vmin] transition-transform duration-1000 ease-in-out"
+        style={{
+          transform: `translateX(-${current * (100 / slides.length)}%)`,
+        }}
+      >
         {slides.map((slide, index) => (
-          <Slide key={index} slide={slide} index={index} current={current} handleSlideClick={handleSlideClick} />
+          <Slide
+            key={index}
+            slide={slide}
+            index={index}
+            current={current}
+            handleSlideClick={handleSlideClick}
+          />
         ))}
       </ul>
-
     </div>
   );
 };
