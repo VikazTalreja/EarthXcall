@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import ReforestationDonationPanel from "../components/ReforestationDonationPanel"
 
 const ReforestationPlantation = () => {
   const [currency] = useState({
@@ -50,78 +51,7 @@ const ReforestationPlantation = () => {
           <p className="text-lg md:text-xl lg:text-2xl mb-8">Restoring forests, protecting biodiversity, and combating climate change</p>
         </div>
 
-        {/* Donation Panel */}
-        <div className="relative z-10 bg-[#F1F0E9] p-6 md:p-8 rounded-lg shadow-xl w-full md:w-[420px] self-center md:self-auto">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-800 mb-3">REFORESTATION ACTION FUND</h2>
-          <p className="text-xs uppercase tracking-wider text-gray-600 mb-4">TOGETHER, RESTORING FORESTS</p>
-          <p className="text-sm md:text-base text-gray-700 mb-6 leading-relaxed">
-            The Reforestation Action Fund works to restore degraded forests and create new woodland areas to combat climate change and preserve biodiversity. Support reforestation today!
-          </p>
-
-          <div className="flex gap-3 mb-6">
-            <button 
-              className={`flex-1 ${donationType === 'oneTime' ? 'bg-[#98A4AE]' : 'bg-white'} hover:bg-[#7A8793] text-${donationType === 'oneTime' ? 'white' : 'gray-700'} font-bold py-3 px-4 rounded text-sm ${donationType !== 'oneTime' ? 'border border-gray-300' : ''}`}
-              onClick={() => setDonationType('oneTime')}
-            >
-              GIVE TODAY
-            </button>
-            <button 
-              className={`flex-1 ${donationType === 'monthly' ? 'bg-[#98A4AE]' : 'bg-white'} hover:bg-[#7A8793] text-${donationType === 'monthly' ? 'white' : 'gray-700'} font-bold py-3 px-4 rounded text-sm ${donationType !== 'monthly' ? 'border border-gray-300' : ''}`}
-              onClick={() => setDonationType('monthly')}
-            >
-              GIVE MONTHLY
-            </button>
-          </div>
-
-          <p className="text-xs uppercase tracking-wider text-gray-600 mb-4">SELECT AN AMOUNT TO DONATE:</p>
-          <div className="grid grid-cols-3 gap-3 mb-4">
-            {currency.amounts.slice(0, 3).map((amount, index) => (
-              <button 
-                key={index}
-                className={`${selectedAmount === amount ? 'bg-[#98A4AE] text-white' : 'bg-white text-gray-700 border border-gray-300'} hover:bg-[#7A8793] hover:text-white font-bold py-2 px-3 rounded text-sm`}
-                onClick={() => handleAmountSelect(amount)}
-              >
-                {currency.symbol}{amount}
-              </button>
-            ))}
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 mb-6">
-            <button 
-              className={`${selectedAmount === currency.amounts[3] ? 'bg-[#98A4AE] text-white' : 'bg-white text-gray-700 border border-gray-300'} hover:bg-[#7A8793] hover:text-white font-bold py-2 px-3 rounded text-sm`}
-              onClick={() => handleAmountSelect(currency.amounts[3])}
-            >
-              {currency.symbol}{currency.amounts[3]}
-            </button>
-            <button 
-              className={`${customAmount && !selectedAmount ? 'bg-[#98A4AE] text-white' : 'bg-white text-gray-700 border border-gray-300'} hover:bg-[#7A8793] hover:text-white font-bold py-2 px-3 rounded text-sm`}
-              onClick={() => document.getElementById('customAmount').focus()}
-            >
-              Other
-            </button>
-          </div>
-
-          <div className="flex items-center mb-6 bg-white rounded border border-gray-300">
-            <div className="flex-1 flex items-center px-3">
-              <span className="text-gray-700 text-sm mr-2">$</span>
-              <input
-                id="customAmount"
-                type="number"
-                className="w-full outline-none text-sm py-2"
-                placeholder="Enter amount"
-                value={customAmount}
-                onChange={handleCustomAmountChange}
-                min="1"
-              />
-            </div>
-          </div>
-          <button
-            className="w-full bg-[#1B3044] hover:bg-[#0D1821] text-white font-bold py-3 px-4 rounded text-sm uppercase"
-            onClick={handleDonate}
-          >
-            {donationType === 'oneTime' ? 'DONATE NOW' : 'DONATE MONTHLY'}
-          </button>
-        </div>
+    <ReforestationDonationPanel/>
       </header>
 
       {/* About Section */}
