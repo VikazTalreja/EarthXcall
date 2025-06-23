@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import rakhiImage from "../assets/Rakhi_Gautam_President&Founder_Earthxway_Foundation.jpg";
 import Dipak_ShindeImage from "../assets/Executive_Director&Co-Founder.jpg";
 import Tauseef_AhmedImage from "../assets/Tauseef_Ahmed_Earthxway_Foundation.jpg";
+import Vikas from "../assets/photo (1).jpg";
+import Darshan from "../assets/7a55494f-2a5e-43b7-a9cc-55e07ced22a8.jpg";
+import Rahul from "../assets/WhatsApp Image 2025-06-23 at 8.10.15 PM.jpeg";
+import DrSIR from "../assets/DR.png";
 
 // Team member data structure
 const teamMembers = {
@@ -25,21 +29,21 @@ const teamMembers = {
       bio: "Dipak Shinde, known as the Agricultural Visionary, is a driving force behind the Earthxway Foundation, working to empower farmers through sustainable practices and innovative agri-tech solutions.",
       social: { linkedin: "#", twitter: "#" },
     },
-   {
-  name: "Rahul Naitam",
-  role: "Chief Technology Officer",
-  image: "https://images.unsplash.com/photo-1603415526960-f7e0328b8217?w=400&h=500&auto=format&fit=crop&fm=webp&q=80",
-  loading: "lazy",
-  decoding: "async",
-  bio: "Innovative technology leader with expertise in sustainable solutions and green technologies. Rahul drives the development and implementation of cutting-edge tech strategies to support the Earthxway Foundation’s mission for environmental impact.",
-  social: { linkedin: "#", twitter: "#" }
-}
+    {
+      name: "Rahul Naitam",
+      role: "Chief Technology Officer",
+      image: Rahul,
+      loading: "lazy",
+      decoding: "async",
+      bio: "Innovative technology leader with expertise in sustainable solutions and green technologies. Rahul drives the development and implementation of cutting-edge tech strategies to support the Earthxway Foundation’s mission for environmental impact.",
+      social: { linkedin: "#", twitter: "#" },
+    },
   ],
   team: [
     {
       name: "Vikas Talreja",
       role: "Digital Strategy Lead & Full Stack Developer",
-     image: "https://images.unsplash.com/photo-1603415526960-f7e0328b8217?w=400&h=500&auto=format&fit=crop&fm=webp&q=80",
+      image: Vikas,
       loading: "lazy",
       decoding: "async",
       bio: "Vikas serves as the Team Leader for Digital at Earthxway Foundation, combining his leadership with hands-on expertise as a full stack developer to architect and implement forward-thinking digital solutions.",
@@ -57,24 +61,24 @@ const teamMembers = {
     {
       name: "Darshan Sharma",
       role: "Community Engagement Manager",
-   image: "/images/default-profile.png",
+      image: Darshan,
       loading: "lazy",
       decoding: "async",
       bio: "Expert in building partnerships and fostering community involvement.",
       social: { linkedin: "#", twitter: "#" },
     },
   ],
- advisors: [
-  {
-    name: "Dr. Kailas M. Talkit",
-    role: "Advisor",
-    image: "https://images.unsplash.com/photo-1603415526960-f7e0328b8217?w=400&h=500&auto=format&fit=crop&fm=webp&q=80",
-    loading: "lazy",
-    decoding: "async",
-    bio: "Dr. Kailas M. Talkit holds a PhD in Environmental Science with a specialization in forest ecosystems. With over 20 years of research and field experience, he provides strategic guidance to the Earthxway Foundation on sustainable forest management, biodiversity conservation, and climate resilience initiatives. His expertise ensures that the foundation’s projects are scientifically grounded and impactful at both local and global levels.",
-    social: { linkedin: "#", twitter: "#" },
-  },
-],
+  advisors: [
+    {
+      name: "Dr. Kailas M. Talkit",
+      role: "Advisor",
+      image:DrSIR,
+      loading: "lazy",
+      decoding: "async",
+      bio: "Dr. Kailas M. Talkit holds a PhD in Environmental Science with a specialization in forest ecosystems. With over 20 years of research and field experience, he provides strategic guidance to the Earthxway Foundation on sustainable forest management, biodiversity conservation, and climate resilience initiatives. His expertise ensures that the foundation’s projects are scientifically grounded and impactful at both local and global levels.",
+      social: { linkedin: "#", twitter: "#" },
+    },
+  ],
 };
 
 // Social Media Links Component
