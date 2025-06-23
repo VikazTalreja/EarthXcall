@@ -1,4 +1,5 @@
 import backgroundImage from "../assets/HomeBg.jpg";
+import DonationDropdown from "../components/DonationDropdown"
 import { useState, useEffect, useId, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -392,21 +393,7 @@ const Home = () => {
           </p>
 
           {/* Donation Dropdown + Donate Button */}
-          <div className="flex flex-col md:flex-row items-center space-y-3 md:space-y-0 md:space-x-3">
-            {/* Donation Amount Dropdown */}
-            <select className="px-3 md:px-4 py-2 md:py-3 border border-gray-300 rounded-lg w-full md:w-64 focus:outline-none focus:ring-2 focus:ring-green-500 text-base">
-              <option value="100">₹100</option>
-              <option value="500">₹500</option>
-              <option value="1000">₹1000</option>
-              <option value="5000">₹5000</option>
-              <option value="custom">Custom Amount</option>
-            </select>
-
-            {/* Donate Now Button */}
-            <button className="w-full md:w-auto px-4 md:px-6 py-2 md:py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition text-base">
-              Donate Now
-            </button>
-          </div>
+        <DonationDropdown/>
         </div>
 
         {/* Right Side - Carousel */}
