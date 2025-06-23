@@ -37,7 +37,7 @@ const DonationForm = () => {
       key: "rzp_test_sEgaLaV8HXhFa9",
       amount: amountToPay * 100,
       currency: "INR",
-      name: "Earthxway Foundationm",
+      name: "Earthxway Foundation",
       description: "Donation",
       image: "./logo.svg",
       handler: function (response) {
