@@ -55,7 +55,7 @@ const FarmerSupportDonation = () => {
       key: "rzp_test_sEgaLaV8HXhFa9", // Replace with your Razorpay key
       amount: finalAmount * 100,
       currency: "INR",
-           name: "Earthxway Foundationm",
+           name: "Earthxway Foundation",
       description: donationType === "monthly" ? "Monthly Donation" : "One-Time Donation",
             image: "./logo.svg",
       handler: function (response) {
