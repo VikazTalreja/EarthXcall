@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/(.*)", "destination": "/" }
   ],
   "functions": {
@@ -7,5 +8,6 @@
       "runtime": "nodejs18.x"
     }
   },
-  "ignoreCommand": "vite build"
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist"
 }
