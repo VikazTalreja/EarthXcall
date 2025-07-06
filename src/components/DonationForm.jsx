@@ -39,7 +39,7 @@ const DonationForm = () => {
       currency: "INR",
       name: "Earthxway Foundation",
       description: "Donation",
-      image: "./logo.svg",
+      image: "/assets/logo.png",
       handler: function (response) {
         console.log("Payment successful", response);
         setShowThankYou(true);

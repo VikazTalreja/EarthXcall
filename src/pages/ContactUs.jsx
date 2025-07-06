@@ -1,10 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ContactData } from '../data/ContactUs';
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
+import { db } from "../firebase"; 
+
 
 // For fade in effect on loading or rendering page
 const FadeInSection = ({ children }) => {
   const [isVisible, setVisible] = useState(false);
   const domRef = useRef(null);
+
+
 
   useEffect(() => {
     const observer = new IntersectionObserver(entries => {
@@ -36,6 +41,7 @@ const FadeInSection = ({ children }) => {
 // Card Componenet
 const ContactCard = ({ title, content }) => {
   const lines = content.split('~').map((line, idx) => line.trim());
+  
   return (
     <FadeInSection>
       <div className="min-h-52 max-h-full flex flex-col bg-white rounded-xl shadow-md p-6  hover:shadow-lg transition-shadow duration-300">
@@ -51,6 +57,34 @@ const ContactCard = ({ title, content }) => {
 };
 
 const ContactUsPage = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const name = e.target.name.value.trim();
+    const email = e.target.email.value.trim();
+    const message = e.target.message.value.trim();
+
+    if (!name || !email || !message) {
+      alert("Please fill out all fields.");
+      return;
+    }
+
+    try {
+      await addDoc(collection(db, "contactMessages"), {
+        name,
+        email,
+        message,
+        createdAt: serverTimestamp()
+      });
+
+      alert("Message sent successfully!");
+      e.target.reset();
+    } catch (error) {
+      console.error("Error submitting message:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-green-50 py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -66,13 +100,14 @@ const ContactUsPage = () => {
             </div>
           ))}
         </div>
+
         {/* Contact Form Section */}
         <FadeInSection>
           <div className="mt-12 bg-white rounded-xl shadow-md p-6">
             <h2 className="text-3xl font-semibold text-green-700 mb-6">
               Send Us a Message
             </h2>
-            <form className="grid grid-cols-1 gap-y-6">
+            <form className="grid grid-cols-1 gap-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                   Name
@@ -124,5 +159,6 @@ const ContactUsPage = () => {
     </div>
   );
 };
+
 
 export default ContactUsPage;
